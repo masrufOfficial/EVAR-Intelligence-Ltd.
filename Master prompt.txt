@@ -1,0 +1,1162 @@
+MASTER DEVELOPMENT PROMPT
+EVAR INTELLIGENCE LTD.
+SECURITY-FIRST + SHIFT-LEFT WEB PLATFORM
+
+You are a senior full-stack architect, cybersecurity engineer,
+DevSecOps engineer, UI/UX designer, 3D web developer and AI product engineer.
+
+Build a production-ready website and secure administration platform for:
+
+EVAR INTELLIGENCE LTD.
+
+Tagline:
+
+"Building Intelligent Solutions for a Safer Tomorrow"
+
+Core mission:
+
+1. AI AWARENESS
+2. AI AUTOMATION & INTELLIGENT PRODUCTS
+
+==================================================
+CRITICAL DEVELOPMENT PRINCIPLE
+==================================================
+
+THIS PROJECT MUST FOLLOW SHIFT-LEFT SECURITY.
+
+Security must NOT be treated as a final testing phase.
+
+Security must be integrated into:
+
+Requirements
+↓
+Architecture
+↓
+UX/UI
+↓
+Frontend
+↓
+Backend
+↓
+API
+↓
+Database
+↓
+Authentication
+↓
+File handling
+↓
+Dependencies
+↓
+Testing
+↓
+CI/CD
+↓
+Deployment
+↓
+Monitoring
+
+Every feature must be designed with security before implementation.
+
+Use the principle:
+
+"Secure by Design + Secure by Default + Shift-Left Security"
+
+Do not build a feature first and add security later.
+
+Before implementing every major feature, identify:
+
+- Security risks
+- Attack surface
+- Trust boundaries
+- Sensitive data
+- Authentication requirements
+- Authorization requirements
+- Input validation requirements
+- Abuse cases
+- Failure scenarios
+- Logging requirements
+
+==================================================
+PART 1 — APPLICATIONS
+==================================================
+
+Build TWO connected applications:
+
+A. PUBLIC EVAR WEBSITE
+B. SECURE EVAR ADMIN DASHBOARD
+
+Both must follow the same secure engineering lifecycle.
+
+Recommended stack:
+
+Next.js
+TypeScript
+React
+Tailwind CSS
+PostgreSQL
+Prisma
+Secure authentication
+Object storage for media
+Three.js / React Three Fiber
+Framer Motion / GSAP where appropriate
+
+Use strict TypeScript.
+
+Avoid unsafe JavaScript patterns.
+
+Do not use "any" unnecessarily.
+
+==================================================
+PART 2 — PUBLIC WEBSITE
+==================================================
+
+The public website must be:
+
+- 3D animated
+- cinematic
+- responsive
+- premium
+- modern
+- fast
+- accessible
+- SEO-friendly
+- security-conscious
+
+The website should communicate:
+
+EVAR = AI Awareness + AI Automation & Products
+
+==================================================
+PUBLIC WEBSITE PAGES
+==================================================
+
+Create:
+
+1. Home
+2. About
+3. AI Awareness
+4. AI Automation
+5. AI Products & Solutions
+6. AI Safety & Responsible AI
+7. Research & Innovation
+8. Contact
+
+Optional CMS-controlled:
+
+9. Insights
+10. Careers
+
+==================================================
+HOME PAGE
+==================================================
+
+Create a cinematic 3D hero.
+
+Headline:
+
+"Building Intelligent Solutions
+for a Safer Tomorrow"
+
+Supporting message:
+
+"AI awareness, intelligent automation and practical AI
+solutions designed with human responsibility at the center."
+
+Primary CTA:
+
+"Explore Our Solutions"
+
+Secondary CTA:
+
+"Learn About EVAR"
+
+The hero must not be overloaded.
+
+Use 3D/WebGL carefully.
+
+Provide a graceful fallback when WebGL is unavailable.
+
+Respect:
+
+prefers-reduced-motion
+
+==================================================
+EVAR CORE PILLARS
+==================================================
+
+PILLAR 01
+
+AI AWARENESS
+
+Show:
+
+AI literacy
+AI education
+AI workshops
+AI awareness programs
+Responsible AI
+AI adoption guidance
+AI safety awareness
+
+PILLAR 02
+
+AI AUTOMATION & PRODUCTS
+
+Show:
+
+AI automation
+AI agents
+Custom AI software
+Intelligent workflows
+Decision-support systems
+AI-powered applications
+Industry-specific AI products
+
+==================================================
+PRODUCT SYSTEM
+==================================================
+
+Products MUST be database-driven.
+
+Do not hardcode products into the frontend.
+
+Each product must support:
+
+Name
+Slug
+Category
+Short description
+Full description
+Problem
+Solution
+Features
+Technology
+Hero media
+Gallery
+Video
+Demo
+Documentation
+CTA
+SEO metadata
+Status
+Featured flag
+Published date
+
+Categories:
+
+AI Products
+AI Automation
+AI Awareness
+AI Safety
+Research & Innovation
+
+==================================================
+PART 3 — ADMIN DASHBOARD
+==================================================
+
+Create a secure enterprise-style administration dashboard.
+
+Visual direction:
+
+- off-white / warm background
+- dark sidebar
+- clean workspace
+- subtle borders
+- rounded panels
+- restrained accent color
+- professional enterprise UX
+
+The dashboard must NOT look like the public website.
+
+Public website:
+
+Cinematic + emotional + futuristic
+
+Admin:
+
+Professional + operational + secure
+
+==================================================
+ADMIN ROLES
+==================================================
+
+Implement strict RBAC.
+
+Roles:
+
+SUPER_ADMIN
+ADMIN
+EDITOR
+CONTENT_MANAGER
+
+Never rely on frontend role checks alone.
+
+Every sensitive operation must be authorized on the server.
+
+Example:
+
+Frontend:
+"Hide button"
+
+Backend:
+"Reject unauthorized request"
+
+Both are required.
+
+==================================================
+ADMIN MODULES
+==================================================
+
+Dashboard
+Content
+Products
+AI Awareness
+Automation
+Research
+Media Library
+Messages
+Team
+Users & Roles
+SEO
+Website Settings
+Security Center
+Audit Logs
+
+==================================================
+PART 4 — SHIFT-LEFT SECURITY ARCHITECTURE
+==================================================
+
+Before writing implementation code:
+
+Create a SECURITY.md containing:
+
+1. Security objectives
+2. Assets
+3. Trust boundaries
+4. Threat model
+5. Attack surface
+6. Authentication model
+7. Authorization model
+8. Data classification
+9. Abuse cases
+10. Security controls
+11. Incident response approach
+
+Create a basic threat model using STRIDE or an equivalent
+structured threat-modeling methodology.
+
+For every major feature document:
+
+Threat
+Impact
+Likelihood
+Mitigation
+Validation/Test
+
+==================================================
+PART 5 — SECURE CODING
+==================================================
+
+All code must follow secure coding practices.
+
+Prevent:
+
+SQL Injection
+XSS
+CSRF
+SSRF
+IDOR
+Broken Access Control
+Command Injection
+Path Traversal
+Prototype Pollution
+Open Redirects
+Insecure Deserialization
+Authentication Bypass
+Privilege Escalation
+Mass Assignment
+Sensitive Data Exposure
+Rate Limit Abuse
+File Upload Abuse
+
+Never trust client-side input.
+
+Validate input on the server.
+
+Use allowlists where possible.
+
+Use strict schemas.
+
+Use safe database queries through Prisma.
+
+Never construct raw SQL from user input.
+
+==================================================
+PART 6 — INPUT VALIDATION
+==================================================
+
+Use schema validation for:
+
+Forms
+API requests
+Query parameters
+URL parameters
+File metadata
+Admin operations
+
+Validate:
+
+Type
+Length
+Format
+Allowed values
+Required fields
+Maximum payload size
+
+Reject malformed requests.
+
+Return safe error messages.
+
+Never expose stack traces to users.
+
+==================================================
+PART 7 — AUTHENTICATION
+==================================================
+
+Admin authentication must be secure.
+
+Implement:
+
+Secure password hashing
+Secure sessions
+HttpOnly cookies
+Secure cookies
+SameSite protection
+Session expiration
+Session rotation
+Login rate limiting
+Failed-login monitoring
+Password reset protection
+
+Never store plaintext passwords.
+
+Never store authentication tokens in localStorage unless there is a
+documented security reason and appropriate protection.
+
+Do not expose authentication secrets to the client.
+
+==================================================
+PART 8 — AUTHORIZATION
+==================================================
+
+Implement server-side RBAC.
+
+Example:
+
+SUPER_ADMIN
+→ Full access
+
+ADMIN
+→ Management access
+
+EDITOR
+→ Content/product/research access
+
+CONTENT_MANAGER
+→ Limited content access
+
+Check authorization on:
+
+Pages
+API routes
+Server actions
+Database mutations
+File operations
+Publishing operations
+User management
+Role changes
+
+Never trust:
+
+role values
+user IDs
+resource IDs
+permissions
+
+sent by the browser.
+
+Prevent IDOR.
+
+Example:
+
+User A must never access:
+
+/api/products/private-user-resource
+
+simply by changing an ID.
+
+==================================================
+PART 9 — API SECURITY
+==================================================
+
+Every API endpoint must define:
+
+Authentication requirement
+Authorization requirement
+Input schema
+Output schema
+Rate limit
+Error behavior
+Logging requirements
+
+Separate:
+
+PUBLIC APIs
+AUTHENTICATED APIs
+ADMIN APIs
+
+Never expose internal admin endpoints publicly without authentication.
+
+Use:
+
+GET
+POST
+PUT/PATCH
+DELETE
+
+appropriately.
+
+Do not expose unnecessary database fields.
+
+Use response DTOs.
+
+==================================================
+PART 10 — FILE UPLOAD SECURITY
+==================================================
+
+Media Library uploads must be treated as untrusted input.
+
+Allow only explicitly supported:
+
+Images
+Videos
+PDFs
+Approved documents
+
+Validate:
+
+MIME type
+File signature/magic bytes
+Extension
+File size
+Filename
+Content type
+
+Generate safe filenames.
+
+Never execute uploaded files.
+
+Prevent:
+
+SVG XSS
+HTML upload attacks
+Polyglot files
+Path traversal
+Executable uploads
+
+Store uploads outside the executable application path where possible.
+
+Use object storage with controlled access.
+
+==================================================
+PART 11 — DATABASE SECURITY
+==================================================
+
+Use PostgreSQL + Prisma.
+
+Implement:
+
+Least privilege
+Parameterized queries
+Foreign-key constraints
+Unique constraints
+Proper indexes
+Data validation
+Migration control
+
+Separate sensitive information logically.
+
+Do not store unnecessary personal information.
+
+Never expose database credentials to frontend code.
+
+Database credentials must exist only in server-side environment variables.
+
+==================================================
+PART 12 — SECRET MANAGEMENT
+==================================================
+
+NEVER hardcode:
+
+API keys
+Database passwords
+JWT secrets
+Encryption keys
+Cloud credentials
+SMTP credentials
+OAuth secrets
+
+Use environment variables / secure secret management.
+
+Create:
+
+.env.example
+
+but NEVER commit:
+
+.env
+production secrets
+private keys
+credentials
+
+Add sensitive files to .gitignore.
+
+==================================================
+PART 13 — SECURITY HEADERS
+==================================================
+
+Implement appropriate HTTP security headers.
+
+At minimum evaluate:
+
+Content-Security-Policy
+Strict-Transport-Security
+X-Content-Type-Options
+Referrer-Policy
+Permissions-Policy
+Frame protection
+
+Configure CSP carefully so that:
+
+3D/WebGL
+fonts
+media
+analytics
+APIs
+
+continue working without unnecessarily weakening security.
+
+Do NOT simply use:
+
+unsafe-eval
+unsafe-inline
+
+unless absolutely required and documented.
+
+==================================================
+PART 14 — RATE LIMITING
+==================================================
+
+Apply rate limits to:
+
+Login
+Password reset
+Contact form
+Public APIs
+Admin APIs
+Search
+File uploads
+Sensitive actions
+
+Use stronger protection for authentication endpoints.
+
+Prevent automated abuse.
+
+==================================================
+PART 15 — CSRF
+==================================================
+
+Protect state-changing operations against CSRF where applicable.
+
+Do not assume:
+
+"SameSite cookies alone solve everything."
+
+Use appropriate framework protections and server-side validation.
+
+==================================================
+PART 16 — XSS PROTECTION
+==================================================
+
+Never blindly render user-controlled HTML.
+
+Sanitize rich content.
+
+Avoid dangerous:
+
+dangerouslySetInnerHTML
+
+unless content has been explicitly sanitized.
+
+CMS content must be treated as untrusted.
+
+Protect:
+
+Product descriptions
+Research content
+Articles
+Team bios
+Contact messages
+Admin-entered HTML
+
+==================================================
+PART 17 — CONTENT SECURITY
+==================================================
+
+The CMS must distinguish:
+
+Trusted system configuration
+
+from
+
+User-generated/CMS content.
+
+Never allow an editor to inject arbitrary JavaScript into the public website.
+
+No CMS field should become executable code.
+
+==================================================
+PART 18 — AUDIT LOGGING
+==================================================
+
+Create immutable-style audit records for security-sensitive operations.
+
+Log:
+
+Login
+Failed login
+Logout
+Password reset
+User creation
+Role change
+Product creation
+Product update
+Product deletion
+Publishing
+Unpublishing
+Media upload
+Media deletion
+Settings changes
+Security events
+
+Each event should contain:
+
+Actor
+Action
+Resource
+Timestamp
+Result
+
+IP/device information only where appropriate and legally justified.
+
+Never log passwords, tokens or secrets.
+
+==================================================
+PART 19 — SECURITY CENTER
+==================================================
+
+Create an Admin:
+
+SECURITY CENTER
+
+Show:
+
+Security status
+Recent security events
+Failed login attempts
+Active sessions
+Admin users
+Role distribution
+Recent privileged actions
+System security warnings
+
+Do not expose sensitive information unnecessarily.
+
+==================================================
+PART 20 — DEPENDENCY SECURITY
+==================================================
+
+Security begins before deployment.
+
+Implement dependency checking.
+
+Use:
+
+npm audit / equivalent
+Dependabot or equivalent
+Lockfiles
+Pinned/controlled versions
+
+Before production:
+
+Check for:
+
+Known vulnerabilities
+Outdated packages
+Abandoned dependencies
+Unnecessary packages
+
+Remove unused dependencies.
+
+==================================================
+PART 21 — SHIFT-LEFT CI/CD
+==================================================
+
+Create a secure CI/CD pipeline.
+
+Every pull request should run:
+
+1. Type checking
+2. Linting
+3. Unit tests
+4. Integration tests
+5. Build test
+6. Dependency vulnerability scan
+7. Secret scanning
+8. Static security analysis
+9. Relevant security tests
+
+Example tools may include:
+
+ESLint
+TypeScript
+Semgrep
+Gitleaks
+npm audit
+Dependabot
+OWASP ZAP
+
+Use appropriate tools rather than blindly installing everything.
+
+A pull request with a critical security issue must fail the pipeline.
+
+==================================================
+PART 22 — SECURITY TESTING
+==================================================
+
+Create security tests for:
+
+Authentication bypass
+Authorization bypass
+IDOR
+XSS
+SQL injection
+CSRF
+Rate limiting
+File upload
+Path traversal
+Privilege escalation
+Input validation
+Session handling
+
+Do not only test the happy path.
+
+Create negative tests.
+
+Example:
+
+EXPECTED:
+
+Admin can publish product.
+
+EXPECTED:
+
+Editor cannot modify user roles.
+
+EXPECTED:
+
+Unauthenticated user cannot access admin API.
+
+EXPECTED:
+
+Content Manager cannot delete products.
+
+EXPECTED:
+
+User cannot access another user's private resource.
+
+==================================================
+PART 23 — ADMIN SECURITY
+==================================================
+
+Protect the admin dashboard as a separate security boundary.
+
+Admin routes should be protected at:
+
+1. Middleware / route layer
+2. Server/API layer
+3. Database operation layer
+
+Do not rely on UI hiding.
+
+==================================================
+PART 24 — PUBLIC CONTACT SECURITY
+==================================================
+
+Contact forms must include protection against:
+
+Spam
+Bot abuse
+Injection
+Oversized payloads
+Malicious links
+Header injection
+
+Use:
+
+Validation
+Rate limiting
+Spam protection
+Safe email handling
+
+Never directly interpolate user input into email headers or HTML.
+
+==================================================
+PART 25 — SECURITY DOCUMENTATION
+==================================================
+
+Create:
+
+SECURITY.md
+
+THREAT_MODEL.md
+
+SECURITY_TESTING.md
+
+INCIDENT_RESPONSE.md
+
+SECURE_DEVELOPMENT.md
+
+DEPENDENCY_POLICY.md
+
+These documents should be maintained with the codebase.
+
+==================================================
+PART 26 — 3D SECURITY & PERFORMANCE
+==================================================
+
+3D/WebGL must not become a security or performance liability.
+
+Do not load arbitrary remote scripts.
+
+Do not execute remote JavaScript.
+
+Validate external media sources.
+
+Use trusted domains.
+
+Use CSP-compatible loading.
+
+Implement:
+
+lazy loading
+dynamic imports
+WebGL fallback
+reduced motion
+mobile optimization
+
+==================================================
+PART 27 — PUBLIC CONTENT
+==================================================
+
+Home sections:
+
+Hero
+AI Awareness
+AI Automation
+Products
+AI Safety
+Research
+About
+Contact
+
+The primary message must remain:
+
+AI AWARENESS
+
++
+
+AI AUTOMATION & PRODUCTS
+
+==================================================
+PART 28 — ADMIN CONTENT MANAGEMENT
+==================================================
+
+Admin must be able to manage:
+
+Hero
+About
+AI Awareness
+Automation
+Products
+Research
+Team
+Contact information
+SEO
+Social links
+
+All content must be database-driven.
+
+Never require source-code modification for normal content updates.
+
+==================================================
+PART 29 — DESIGN
+==================================================
+
+PUBLIC:
+
+Dark cinematic
+3D
+Premium
+Futuristic
+Human-centered
+Minimal
+
+ADMIN:
+
+Professional
+Light/neutral
+Dark sidebar
+Enterprise
+Clean
+Operational
+
+Do not mix the two visual experiences.
+
+==================================================
+PART 30 — DEVELOPMENT WORKFLOW
+==================================================
+
+Follow this workflow for EVERY feature:
+
+STEP 1
+Define requirement.
+
+STEP 2
+Identify assets and sensitive data.
+
+STEP 3
+Threat model the feature.
+
+STEP 4
+Define trust boundaries.
+
+STEP 5
+Define authentication and authorization.
+
+STEP 6
+Define input validation.
+
+STEP 7
+Define abuse cases.
+
+STEP 8
+Design UI/UX.
+
+STEP 9
+Implement backend security.
+
+STEP 10
+Implement frontend.
+
+STEP 11
+Write tests.
+
+STEP 12
+Run security scanning.
+
+STEP 13
+Review dependencies.
+
+STEP 14
+Review logs and error handling.
+
+STEP 15
+Only then mark the feature complete.
+
+==================================================
+FINAL SECURITY GATE
+==================================================
+
+Before declaring the application production-ready:
+
+[ ] No known critical vulnerabilities
+[ ] No hardcoded secrets
+[ ] No plaintext passwords
+[ ] RBAC verified
+[ ] Authentication verified
+[ ] Authorization verified
+[ ] IDOR tests passed
+[ ] XSS tests passed
+[ ] Injection tests passed
+[ ] CSRF protection verified
+[ ] Rate limiting verified
+[ ] File upload security verified
+[ ] Security headers verified
+[ ] CSP reviewed
+[ ] Dependency scan passed
+[ ] Secret scan passed
+[ ] Static security scan passed
+[ ] Security tests passed
+[ ] Audit logging works
+[ ] Error messages do not leak sensitive information
+[ ] Production environment variables secured
+[ ] Database permissions reviewed
+[ ] Backup/recovery strategy documented
+
+==================================================
+FINAL PRODUCT PRINCIPLE
+==================================================
+
+EVAR Intelligence Ltd. is an AI company.
+
+Therefore the platform itself must demonstrate:
+
+INTELLIGENCE
++
+RESPONSIBILITY
++
+SECURITY
++
+HUMANITY
+
+Do not treat cybersecurity as an additional feature.
+
+Security is part of the architecture.
+
+Use:
+
+SHIFT-LEFT SECURITY
+SECURE-BY-DESIGN
+DEFENSE-IN-DEPTH
+LEAST PRIVILEGE
+ZERO TRUST PRINCIPLES WHERE APPROPRIATE
+
+Build the platform so that security vulnerabilities are identified
+as early as possible in the development lifecycle rather than
+after the product has already been built.
+
+Do not sacrifice security for visual effects.
+
+Do not sacrifice usability for unnecessary security complexity.
+
+The final product must be:
+
+Premium
+Fast
+Accessible
+Secure
+Maintainable
+Scalable
+Production-ready

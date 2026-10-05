@@ -1,0 +1,138 @@
+// Prisma schema for EVAR Intelligence Ltd.
+// Default datasource is SQLite for instant zero-dependency localhost operation
+// Can be changed to postgresql with DATABASE_URL for cloud deployments
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  passwordHash   String
+  name           String
+  role           String    @default("EDITOR") // SUPER_ADMIN, ADMIN, EDITOR, CONTENT_MANAGER
+  avatar         String?
+  isActive       Boolean   @default(true)
+  lastLogin      DateTime?
+  failedAttempts Int       @default(0)
+  lockedUntil    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Product {
+  id               String    @id @default(cuid())
+  name             String
+  slug             String    @unique
+  category         String    // "AI Products", "AI Automation", "AI Awareness", "AI Safety", "Research & Innovation"
+  shortDescription String
+  fullDescription  String
+  problem          String
+  solution         String
+  features         String    // JSON array
+  technology       String    // JSON array
+  heroMedia        String
+  gallery          String    // JSON array
+  video            String?
+  demoUrl          String?
+  documentationUrl String?
+  ctaText          String    @default("Explore Solution")
+  ctaLink          String    @default("/contact")
+  status           String    @default("published") // published, draft, archived
+  isFeatured       Boolean   @default(false)
+  publishedAt      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model AwarenessProgram {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  audience    String   // Enterprise Executives, Technical Teams, Public & Institutions
+  duration    String
+  format      String   // Workshop, Executive Briefing, Continuous Certification
+  description String
+  modules     String   // JSON array of syllabus modules
+  outcomes    String   // JSON array of target capabilities
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AutomationWorkflow {
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  industry       String
+  efficiencyGain String
+  description    String
+  architecture   String
+  agentsDeployed String   // JSON array
+  status         String   @default("active")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model ResearchPaper {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  authors         String
+  publicationDate DateTime
+  abstract        String
+  pdfUrl          String?
+  category        String
+  readTime        String
+  isPublished     Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model ContactMessage {
+  id           String   @id @default(cuid())
+  name         String
+  email        String
+  organization String?
+  interest     String
+  message      String
+  status       String   @default("unread") // unread, reviewed, replied, archived
+  ipHash       String?
+  createdAt    DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  actorEmail String
+  action    String
+  resource  String
+  details   String?
+  result    String   // SUCCESS, FAILURE, BLOCKED
+  ipAddress String?
+  timestamp DateTime @default(now())
+}
+
+model SecurityEvent {
+  id           String   @id @default(cuid())
+  eventType    String   // RATE_LIMIT_TRIGGERED, HONEYPOT_HIT, UNAUTHORIZED_ACCESS, FAILED_LOGIN
+  severity     String   // INFO, WARNING, HIGH, CRITICAL
+  description  String
+  clientIpHash String?
+  resolved     Boolean  @default(false)
+  timestamp    DateTime @default(now())
+}
+
+model WebsiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}

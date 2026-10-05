@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ════════════════════════════════════════
+   THEME TOKENS FROM design.txt
+   ════════════════════════════════════════ */
+:root {
+  --ink: #fafafa;          /* headline / primary text */
+  --muted: #a7a6a6;        /* subcopy */
+  --nav: #b6b5b5;          /* header links */
+  --strip: #8b8a8a;        /* partner logos / borders */
+  --pill: #ffffff;         /* CTA fill */
+  --pill-ink: #050505;     /* CTA text */
+  --stage-bg: #050505;     /* Pure dark void */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.22);
+  --card-bg: rgba(255, 255, 255, 0.025);
+  --card-hover: rgba(255, 255, 255, 0.045);
+
+  /* Reference canvas: 1487 × 1058 */
+  --u: calc(100vh / 1058);
+  --uw: calc(100vw / 1487);
+  --h: clamp(var(--u), calc(var(--u) * .65 + var(--uw) * .35), calc(var(--u) * 1.16));
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --u: calc(100dvh / 1058);
+  }
+}
+
+html {
+  background-color: var(--stage-bg);
+  color: var(--ink);
+  font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--stage-bg);
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Custom Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1e1e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+/* ════════════════════════════════════════
+   MINIMALIST DARK DESIGN UTILITIES
+   ════════════════════════════════════════ */
+.dark-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dark-panel:hover {
+  border-color: var(--border-hover);
+  background: var(--card-hover);
+}
+
+.dark-panel-static {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Signature White Pill Buttons */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--pill);
+  color: var(--pill-ink);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.pill-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-0.5px);
+}
+
+/* Ghost Link / Button */
+.ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 24px;
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.ghost-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ghost-link {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.ghost-link:hover {
+  opacity: 0.8;
+}
+
+/* Badge pill */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d1d5db;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ════════════════════════════════════════
+   FULL-BLEED HERO STAGE (design.txt)
+   ════════════════════════════════════════ */
+.hero-stage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #050505;
+}
+
+.hero-plate {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-plate-video {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.hero-plate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to bottom,
+      rgba(5, 5, 5, 0.1) 0%,
+      rgba(5, 5, 5, 0) 50%,
+      rgba(5, 5, 5, 0.45) 75%,
+      rgba(5, 5, 5, 0.85) 90%,
+      #050505 100%),
+    linear-gradient(to right,
+      #050505 0%,
+      transparent 18%,
+      transparent 82%,
+      #050505 100%);
+}
+
+@media (max-width: 768px) {
+  .hero-plate-video {
+    object-position: 45% center;
+  }
+}
+
+/* ════════════════════════════════════════
+   PARTNER LOGOS
+   ════════════════════════════════════════ */
+.partner-wordmark {
+  font-family: 'IpsumMark', 'Manrope', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--strip);
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
