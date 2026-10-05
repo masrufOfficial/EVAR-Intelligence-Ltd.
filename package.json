@@ -9,7 +9,8 @@
     "lint": "next lint",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js",
-    "test:security": "node scripts/security-test.js"
+    "test:security": "node scripts/security-test.js",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.20.0",

@@ -13,6 +13,10 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    DATABASE_URL: process.env.DATABASE_URL || 'file:./prisma/dev.db',
+    JWT_SECRET: process.env.JWT_SECRET || 'evar-enterprise-secret-key-32-chars-minimum-token-protection',
+  },
   async headers() {
     return [
       {

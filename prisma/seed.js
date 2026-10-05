@@ -1,7 +1,18 @@
 const { PrismaClient } = require('@prisma/client');
 const bcrypt = require('bcryptjs');
+const path = require('path');
 
-const prisma = new PrismaClient();
+if (!process.env.DATABASE_URL) {
+  process.env.DATABASE_URL = 'file:' + path.resolve(__dirname, 'dev.db');
+}
+
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL,
+    },
+  },
+});
 
 async function main() {
   console.log('--- Seeding EVAR Intelligence Ltd Database ---');
