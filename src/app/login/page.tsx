@@ -21,19 +21,25 @@ export default function LoginPage() {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: email.trim(), password }),
       });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || 'Authentication rejected');
+      let data: any = {};
+      const rawText = await res.text();
+      try {
+        data = rawText ? JSON.parse(rawText) : {};
+      } catch {
+        data = { error: rawText || `Server responded with status ${res.status}` };
       }
 
-      router.push('/admin');
-      router.refresh();
+      if (!res.ok) {
+        throw new Error(data.error || `Authentication failed (${res.status})`);
+      }
+
+      // Hard redirect ensures browser loads admin dashboard with active session cookie
+      window.location.href = '/admin';
     } catch (err: any) {
-      setError(err.message || 'Login failed');
+      setError(err.message || 'Login failed. Please verify credentials.');
     } finally {
       setLoading(false);
     }

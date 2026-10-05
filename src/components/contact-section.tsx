@@ -31,7 +31,13 @@ export default function ContactSection() {
         body: JSON.stringify(formData),
       });
 
-      const data = await res.json();
+      let data: any = {};
+      const rawText = await res.text();
+      try {
+        data = rawText ? JSON.parse(rawText) : {};
+      } catch {
+        data = { error: rawText || `Server responded with status ${res.status}` };
+      }
 
       if (!res.ok) {
         throw new Error(data.error || 'Failed to transmit message');

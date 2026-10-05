@@ -59,15 +59,21 @@ export async function getSession(): Promise<SessionPayload | null> {
 export function setSessionCookie(response: NextResponse, token: string) {
   response.cookies.set(COOKIE_NAME, token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    secure: false, // Allow http://localhost:3000 sessions to persist
+    sameSite: 'lax',
     maxAge: 60 * 60 * 24, // 24 hours
     path: '/',
   });
 }
 
 export function clearSessionCookie(response: NextResponse) {
-  response.cookies.delete(COOKIE_NAME);
+  response.cookies.set(COOKIE_NAME, '', {
+    httpOnly: true,
+    secure: false,
+    sameSite: 'lax',
+    maxAge: 0,
+    path: '/',
+  });
 }
 
 export function hasRoleAccess(userRole: UserRole, allowedRoles: UserRole[]): boolean {
