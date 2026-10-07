@@ -47,7 +47,7 @@ export default async function AdminDashboardPage() {
             Enterprise Operations Dashboard
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
-            Operational overview of products, AI awareness programs, leads, and shift-left cybersecurity telemetry.
+            Operational overview of products, AI awareness programs, inquiries, and platform telemetry.
           </p>
         </div>
         <div className="flex items-center space-x-2">
@@ -176,13 +176,13 @@ export default async function AdminDashboardPage() {
           </div>
         </div>
 
-        {/* Right Column: Shift-Left Security Telemetry (4 cols) */}
+        {/* Right Column: AI Safety & Platform Telemetry (4 cols) */}
         <div className="lg:col-span-4 space-y-6">
           {/* Security Center Snapshot */}
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
             <h3 className="text-sm font-bold text-slate-900 mb-1 flex items-center space-x-1.5">
               <ShieldCheck className="w-4 h-4 text-blue-600" />
-              <span>Shift-Left Security Gate</span>
+              <span>AI Safety & Security Gate</span>
             </h3>
             <p className="text-xs text-slate-500 mb-4">Real-time defensive posture validation.</p>
 

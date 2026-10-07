@@ -7,9 +7,9 @@ import { prisma } from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'AI Awareness & Literacy | EVAR Intelligence Ltd.',
+  title: 'AI Awareness & Understanding | EVAR Intelligence Ltd.',
   description:
-    'Comprehensive AI education, executive governance masterclasses, workforce literacy, and responsible AI adoption frameworks.',
+    'We promote AI awareness and understanding to help people and organizations navigate the evolving AI landscape.',
 };
 
 export default async function AIAwarenessPage() {
@@ -28,22 +28,22 @@ export default async function AIAwarenessPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#fafafa] flex flex-col">
+    <div className="min-h-screen bg-[var(--stage-bg)] text-[var(--ink)] flex flex-col">
       <Navbar />
 
       <section className="pt-36 pb-16 max-w-4xl mx-auto px-6 sm:px-8 text-center">
-        <div className="badge-pill mb-6">
-          Pillar 01 &bull; Education &amp; Literacy
+        <div className="badge-pill mb-6 text-violet-600 dark:text-violet-400">
+          Specialty 02 &bull; AI Awareness
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-normal text-[#fafafa] tracking-tight leading-tight mb-6">
-          AI Awareness &amp; <span className="text-[#a7a6a6]">Cognitive Defense</span>
+        <h1 className="text-4xl sm:text-6xl font-light text-[#00212b] dark:text-[#fafafa] tracking-tight leading-tight mb-6">
+          Navigating The <span className="font-semibold evar-text-gradient">AI Landscape</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-[#a7a6a6] max-w-2xl mx-auto leading-relaxed font-normal">
-          In an era of ubiquitous synthetic media and autonomous agents, organizational
-          security begins with human comprehension. EVAR bridges the technical knowledge gap with certified
-          governance, safety, and literacy programs.
+        <p className="text-base sm:text-lg text-[#475569] dark:text-[#a7a6a6] max-w-2xl mx-auto leading-relaxed font-normal">
+          We promote AI awareness and understanding to help people and organizations navigate
+          the evolving AI landscape. In an era of rapid transformation, clarity and human
+          comprehension are the greatest strategic assets.
         </p>
       </section>
 

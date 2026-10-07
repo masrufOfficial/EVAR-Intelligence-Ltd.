@@ -205,7 +205,7 @@ export default function Hero3D() {
         <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 mb-6 backdrop-blur-md shadow-lg shadow-black/50">
           <span className="flex h-2 w-2 rounded-full bg-fuchsia-500 animate-ping" />
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">
-            Shift-Left Security & Human Protection
+            Human Protection & AI Innovation
           </span>
           <span className="text-xs text-slate-500">|</span>
           <span className="text-xs font-medium text-cyan-400">EVAR Intelligence Ltd.</span>
@@ -283,7 +283,7 @@ export default function Hero3D() {
           <div>
             <div className="text-2xl font-bold text-white tracking-tight">Zero-Trust</div>
             <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5">
-              Shift-Left Security
+              AI Safety & Alignment
             </div>
           </div>
           <div>

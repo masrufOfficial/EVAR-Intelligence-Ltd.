@@ -1,11 +1,13 @@
 import React from 'react';
 import Navbar from '@/components/navbar';
 import HeroCinematic from '@/components/hero-cinematic';
-import PillarAwareness from '@/components/pillar-awareness';
-import PillarAutomation from '@/components/pillar-automation';
-import ProductGrid from '@/components/product-grid';
+import SpecialtiesSection from '@/components/specialties-section';
 import SafetySection from '@/components/safety-section';
+import PillarAwareness from '@/components/pillar-awareness';
+import ProductGrid from '@/components/product-grid';
+import PillarAutomation from '@/components/pillar-automation';
 import ResearchShowcase from '@/components/research-showcase';
+import FoundersSection from '@/components/founders-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
 import { prisma } from '@/lib/prisma';
@@ -13,9 +15,9 @@ import { prisma } from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'The Next Layer of Intelligence | EVAR Intelligence Ltd.',
+  title: 'EVAR Intelligence Ltd. | An Innovation Hub for Human Protection in the Age of AI',
   description:
-    'A unified infrastructure platform to help teams build, ship, and scale AI systems with confidence. Human protection in the age of AI.',
+    'Researching and developing solutions across 5 core specialties: AI Safety, AI Awareness, Intelligent Software, AI Product Development, and AI Automation.',
 };
 
 export default async function HomePage() {
@@ -74,14 +76,16 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-[#050505] text-[#fafafa] flex flex-col antialiased">
+    <div className="w-full min-h-screen bg-[var(--stage-bg)] text-[var(--ink)] flex flex-col antialiased">
       <Navbar />
       <HeroCinematic />
-      <PillarAwareness programs={awarenessPrograms.length > 0 ? awarenessPrograms : undefined} />
-      <PillarAutomation workflows={automationWorkflows.length > 0 ? automationWorkflows : undefined} />
-      <ProductGrid products={products} />
+      <SpecialtiesSection />
       <SafetySection />
+      <PillarAwareness programs={awarenessPrograms.length > 0 ? awarenessPrograms : undefined} />
+      <ProductGrid products={products} />
+      <PillarAutomation workflows={automationWorkflows.length > 0 ? automationWorkflows : undefined} />
       <ResearchShowcase papers={researchPapers.length > 0 ? researchPapers : undefined} />
+      <FoundersSection />
       <ContactSection />
       <Footer />
     </div>

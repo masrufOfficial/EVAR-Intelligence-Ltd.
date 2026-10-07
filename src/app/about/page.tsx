@@ -3,114 +3,96 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Sparkles, Cpu, Layers, Bot } from 'lucide-react';
+import FoundersSection from '@/components/founders-section';
 
 export const metadata = {
-  title: 'About EVAR Intelligence Ltd. | The Next Layer of Intelligence',
+  title: 'About EVAR Intelligence Ltd. | An Innovation Hub for Human Protection in the Age of AI',
   description:
-    'Learn about EVAR Intelligence Ltd. - Building intelligent solutions for a safer tomorrow through AI awareness, automation, and shift-left cybersecurity.',
+    'Learn about EVAR Intelligence Ltd. - Building intelligent solutions for a safer tomorrow through AI Safety, AI Awareness, Intelligent Software, AI Product Development, and AI Automation.',
 };
 
 export default function AboutPage() {
-  const leadership = [
+  const specialties = [
     {
-      name: 'Dr. Evelyn Vance',
-      role: 'Chief AI Safety Architect & Co-Founder',
-      bio: 'Former principal researcher in adversarial machine learning and frontier model alignment with 15+ years leading safety engineering.',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+      title: 'AI Safety',
+      desc: 'We research and develop approaches for safer, more reliable, responsible, and human-centered AI.',
+      icon: ShieldCheck,
+      color: 'text-cyan-500',
     },
     {
-      name: 'Marcus Chen',
-      role: 'Head of Autonomous Systems & Co-Founder',
-      bio: 'Specialist in multi-agent orchestration, bounded agency state machines, and zero-knowledge private computation.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
+      title: 'AI Awareness',
+      desc: 'We promote AI awareness and understanding to help people and organizations navigate the evolving AI landscape.',
+      icon: Sparkles,
+      color: 'text-violet-500',
     },
     {
-      name: 'Sarah Al-Mansoor',
-      role: 'Director of AI Literacy & Human Factors',
-      bio: 'Pioneered enterprise workforce cognitive empowerment programs, training over 40,000 knowledge workers globally in responsible AI.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80',
+      title: 'Intelligent Software',
+      desc: 'We develop intelligent software that combines modern engineering with AI-driven capabilities.',
+      icon: Cpu,
+      color: 'text-blue-500',
+    },
+    {
+      title: 'AI Product Development',
+      desc: 'We build practical AI-powered products that solve real-world problems and create meaningful value.',
+      icon: Layers,
+      color: 'text-pink-500',
+    },
+    {
+      title: 'AI Automation',
+      desc: 'We automate repetitive and complex workflows using intelligent AI agents and automation systems.',
+      icon: Bot,
+      color: 'text-orange-500',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#fafafa] flex flex-col">
+    <div className="min-h-screen bg-[var(--stage-bg)] text-[var(--ink)] flex flex-col">
       <Navbar />
 
       {/* Hero Section */}
       <section className="pt-36 pb-20 max-w-4xl mx-auto px-6 sm:px-8 text-center">
-        <div className="badge-pill mb-6">
+        <div className="badge-pill mb-6 text-cyan-600 dark:text-cyan-400">
           Origin &bull; Ethos
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-normal text-[#fafafa] tracking-tight leading-tight mb-6">
-          An Innovation Hub for <span className="text-[#a7a6a6]">Human Protection</span> in the Age of AI
+        <h1 className="text-4xl sm:text-6xl font-light text-[#00212b] dark:text-[#fafafa] tracking-tight leading-tight mb-6">
+          An Innovation Hub for <span className="font-semibold evar-text-gradient">Human Protection</span> in the Age of AI
         </h1>
 
-        <p className="text-base sm:text-lg text-[#a7a6a6] max-w-2xl mx-auto leading-relaxed font-normal">
+        <p className="text-base sm:text-lg text-[#475569] dark:text-[#a7a6a6] max-w-2xl mx-auto leading-relaxed font-normal">
           EVAR Intelligence Ltd. was established on a single unwavering conviction: as artificial
-          intelligence reshapes the contours of human society, safety, awareness, and security
-          must lead capability.
+          intelligence reshapes the contours of human society, safety, human-centered alignment,
+          and practical innovation must advance hand in hand.
         </p>
       </section>
 
-      {/* Mission & Vision Matrix */}
-      <section className="py-20 border-t border-white/[0.06] bg-[#050505]">
+      {/* 5 Specialties Matrix */}
+      <section className="py-20 border-t border-[#00212b]/10 dark:border-white/[0.06] bg-transparent">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="dark-panel p-8">
-              <h2 className="text-xl font-normal text-[#fafafa] mb-3">Our Core Mission</h2>
-              <p className="text-sm text-[#a7a6a6] leading-relaxed font-normal">
-                To build intelligent solutions for a safer tomorrow. We unite two fundamental pillars:
-                raising foundational <strong>AI Awareness</strong> to empower human judgment, and developing
-                resilient <strong>AI Automation &amp; Intelligent Products</strong> governed by mathematically
-                bounded human agency.
-              </p>
+          <div className="max-w-2xl mb-12">
+            <div className="badge-pill mb-4 text-cyan-600 dark:text-cyan-400">
+              Foundational Pillars
             </div>
-
-            <div className="dark-panel p-8">
-              <h2 className="text-xl font-normal text-[#fafafa] mb-3">The Shift-Left Philosophy</h2>
-              <p className="text-sm text-[#a7a6a6] leading-relaxed font-normal">
-                Traditional cybersecurity treats defenses as a late-stage barrier. At EVAR, security is
-                shifted left into the earliest architectural sketches, model loss functions, and dataset curation.
-                We do not build products and secure them afterward; we engineer security as the architecture.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className="py-24 border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="max-w-2xl mb-16">
-            <div className="badge-pill mb-4">
-              Team &bull; Leadership
-            </div>
-            <h2 className="text-3xl font-normal text-[#fafafa]">Scientific &amp; Engineering Leadership</h2>
-            <p className="mt-2 text-[#a7a6a6] text-sm font-normal">
-              Our leadership unites deep learning mathematicians, cybersecurity architects, and human-factors educators.
+            <h2 className="text-3xl font-light text-[#00212b] dark:text-[#fafafa]">
+              Our Five <span className="font-semibold evar-text-gradient">Specialties</span>
+            </h2>
+            <p className="mt-2 text-[#475569] dark:text-[#a7a6a6] text-sm">
+              How we translate responsible research into high-impact products and operational excellence.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {leadership.map((person, idx) => (
-              <div
-                key={idx}
-                className="dark-panel overflow-hidden group"
-              >
-                <div className="relative w-full h-64 overflow-hidden bg-[#0a0a0a]">
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    fill
-                    className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-base font-normal text-[#fafafa] mb-1">{person.name}</h3>
-                  <div className="text-xs text-[#8b8a8a] mb-3 font-mono">{person.role}</div>
-                  <p className="text-xs text-[#a7a6a6] leading-relaxed font-normal">{person.bio}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {specialties.map((spec, i) => (
+              <div key={i} className="dark-panel p-8 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <spec.icon className={`w-6 h-6 ${spec.color}`} />
+                    <h3 className="text-lg font-semibold text-[#00212b] dark:text-[#fafafa]">{spec.title}</h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#475569] dark:text-[#a7a6a6] leading-relaxed">
+                    {spec.desc}
+                  </p>
                 </div>
               </div>
             ))}
@@ -118,14 +100,17 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Founding Leadership */}
+      <FoundersSection />
+
       {/* Advisory Call to Action */}
-      <section className="py-20 border-t border-white/[0.06]">
+      <section className="py-20 border-t border-[#00212b]/10 dark:border-white/[0.06]">
         <div className="max-w-3xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-normal text-[#fafafa] mb-4">
-            Partner With EVAR Intelligence
+          <h2 className="text-2xl sm:text-3xl font-light text-[#00212b] dark:text-[#fafafa] mb-4">
+            Partner With <span className="font-semibold evar-text-gradient">EVAR Intelligence</span>
           </h2>
-          <p className="text-sm text-[#a7a6a6] max-w-xl mx-auto mb-8 font-normal">
-            Whether your enterprise requires specialized red-teaming, executive literacy masterclasses, or custom
+          <p className="text-sm text-[#475569] dark:text-[#a7a6a6] max-w-xl mx-auto mb-8 font-normal">
+            Whether your enterprise requires safety verification, executive literacy masterclasses, or custom
             multi-agent automation architectures, our team is ready to assist.
           </p>
           <Link

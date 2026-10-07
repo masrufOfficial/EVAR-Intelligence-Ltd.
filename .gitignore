@@ -11,15 +11,14 @@
 
 # Environment Variables & Secrets
 .env
+.env.production
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Databases
-*.db
+# Databases (allow prisma/dev.db for initial deployment seeds)
 *.db-journal
-*.sqlite
 
 # Logs
 npm-debug.log*

@@ -7,9 +7,9 @@ import { prisma } from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'AI Products & Solutions | EVAR Intelligence Ltd.',
+  title: 'Intelligent Software & AI Products | EVAR Intelligence Ltd.',
   description:
-    'Explore EVAR Intelligence database-driven AI products: EVAR Sentinel AI, Cognitive Orchestrator, ShieldLens Deepfake Guard, and Neural Enclave.',
+    'We develop intelligent software that combines modern engineering with AI-driven capabilities and build practical AI-powered products that solve real-world problems.',
 };
 
 export default async function ProductsPage() {
@@ -30,27 +30,27 @@ export default async function ProductsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#fafafa] flex flex-col">
+    <div className="min-h-screen bg-[var(--stage-bg)] text-[var(--ink)] flex flex-col">
       <Navbar />
 
       <section className="pt-36 pb-12 max-w-4xl mx-auto px-6 sm:px-8 text-center">
-        <div className="badge-pill mb-6">
-          Suite &bull; Enterprise Intelligence
+        <div className="badge-pill mb-6 text-fuchsia-600 dark:text-fuchsia-400">
+          Specialties 03 &amp; 04 &bull; Software &amp; Products
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-normal text-[#fafafa] tracking-tight leading-tight mb-4">
-          Intelligent Products for <span className="text-[#a7a6a6]">Frontier Protection</span>
+        <h1 className="text-4xl sm:text-6xl font-light text-[#00212b] dark:text-[#fafafa] tracking-tight leading-tight mb-4">
+          Intelligent Software &amp; <span className="font-semibold evar-text-gradient">AI Products</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-[#a7a6a6] max-w-2xl mx-auto leading-relaxed font-normal">
-          Our software products protect organizations from adversarial foundation model exploits,
-          synthetic identity deception, and unregulated agent hallucinations.
+        <p className="text-base sm:text-lg text-[#475569] dark:text-[#a7a6a6] max-w-2xl mx-auto leading-relaxed font-normal">
+          We combine modern engineering with AI-driven capabilities to build practical
+          AI-powered products that solve real-world problems and create meaningful value.
         </p>
       </section>
 
       <ProductGrid
         products={products}
-        title="Active Enterprise Product Deployments"
+        title="Active Solutions & Deployments"
         subtitle="Filter by category or search through features, frameworks, and architecture stacks."
       />
 

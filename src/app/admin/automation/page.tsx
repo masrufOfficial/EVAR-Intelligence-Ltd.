@@ -59,7 +59,7 @@ export default async function AdminAutomationPage() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs text-slate-400 font-mono">Shift-Left Bounded</span>
+                <span className="text-xs text-slate-400 font-mono">Safety Bounded</span>
                 <button className="text-xs text-blue-600 hover:text-blue-700 font-semibold">
                   Configure Graph
                 </button>

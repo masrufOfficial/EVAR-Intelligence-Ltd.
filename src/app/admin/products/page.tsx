@@ -365,7 +365,7 @@ export default function AdminProductsPage() {
                     value={newProduct.solution}
                     onChange={(e) => setNewProduct({ ...newProduct, solution: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:outline-none focus:border-blue-600 resize-none"
-                    placeholder="How does EVAR Shift-Left technology resolve it?"
+                    placeholder="How does EVAR Intelligent Technology resolve it?"
                   />
                 </div>
               </div>

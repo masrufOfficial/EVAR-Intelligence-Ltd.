@@ -48,7 +48,7 @@ export default async function AdminSecurityPage() {
         <div>
           <div className="flex items-center space-x-2">
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <h2 className="text-xl font-bold text-slate-900">Shift-Left Security Center</h2>
+            <h2 className="text-xl font-bold text-slate-900">AI Safety & Security Center</h2>
           </div>
           <p className="text-xs text-slate-500 mt-0.5">
             Continuous threat modeling, telemetry aggregation, and RBAC boundary verification.

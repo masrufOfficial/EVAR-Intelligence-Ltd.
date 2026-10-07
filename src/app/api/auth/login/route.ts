@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 2. Shift-Left Schema Validation
+    // 2. Strict Input Schema Validation
     let body: any;
     try {
       body = await req.json();

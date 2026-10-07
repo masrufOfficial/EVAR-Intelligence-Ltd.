@@ -39,7 +39,7 @@ export default async function ProductDetailPage({
   const technology: string[] = JSON.parse(product.technology || '[]');
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#fafafa] flex flex-col">
+    <div className="min-h-screen bg-[var(--stage-bg)] text-[var(--ink)] flex flex-col">
       <Navbar />
 
       <div className="pt-32 pb-24 max-w-4xl mx-auto px-6 sm:px-8 w-full">

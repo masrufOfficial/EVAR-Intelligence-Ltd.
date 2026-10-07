@@ -18,13 +18,13 @@ export interface ResearchPaperItem {
 const defaultPapers: ResearchPaperItem[] = [
   {
     id: 'paper-1',
-    title: 'Shift-Left Guardrails: Preventing Adversarial Exploits in Autonomous Agent Collectives',
-    slug: 'shift-left-guardrails-autonomous-agents',
+    title: 'Deterministic Safety Guardrails: Preventing Adversarial Exploits in Autonomous Agent Collectives',
+    slug: 'deterministic-safety-guardrails-autonomous-agents',
     authors: 'Dr. Evelyn Vance, Marcus Chen, Research Team at EVAR Labs',
     publicationDate: 'March 2026',
     abstract:
       'Autonomous agent collectives communicate via natural language and API tool invocation, creating unprecedented attack surfaces for indirect prompt injection and cascading hallucination. We present a formal mathematical framework for deterministic tool gating and state-graph invariance verification that provably eliminates 99.8% of unauthorized privilege escalation attempts.',
-    category: 'Agent Alignment',
+    category: 'AI Safety & Alignment',
     readTime: '18 min read',
   },
   {
@@ -35,7 +35,7 @@ const defaultPapers: ResearchPaperItem[] = [
     publicationDate: 'May 2026',
     abstract:
       'Generative diffusion models can now synthesize photorealistic human faces with indistinguishable texture fidelity. However, biological sub-surface capillary blood flow induces subtle, periodic chromatic variations imperceptible to the human eye. We detail a sub-5ms convolutional frequency decomposition pipeline that detects synthetic facial generations with 99.94% accuracy under adverse lighting.',
-    category: 'Human-Centric AI',
+    category: 'Human Protection in AI',
     readTime: '24 min read',
   },
   {
@@ -46,7 +46,7 @@ const defaultPapers: ResearchPaperItem[] = [
     publicationDate: 'July 2026',
     abstract:
       'Enterprises remain hesitant to deploy proprietary weights onto public clouds, while data owners cannot transmit raw training sets. We demonstrate an end-to-end framework combining AMD SEV-SNP enclaves with recursive Halo2 SNARK proofs, delivering verifiable private model inference with less than 7% computational overhead.',
-    category: 'Adversarial Robustness',
+    category: 'Intelligent Software',
     readTime: '31 min read',
   },
 ];
@@ -66,19 +66,19 @@ export default function ResearchShowcase({
   };
 
   return (
-    <section className="py-28 relative bg-[#050505] border-t border-white/[0.06]">
+    <section id="research" className="py-24 sm:py-28 relative bg-transparent border-t border-[#00212b]/10 dark:border-white/[0.08]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <div className="badge-pill mb-4">
-              Publications &bull; Research
+            <div className="badge-pill mb-4 text-cyan-600 dark:text-cyan-400">
+              Publications &bull; Research Labs
             </div>
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#fafafa] tracking-tight leading-tight">
-              Frontier Research &amp; Whitepapers
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-light text-[#00212b] dark:text-[#fafafa] tracking-tight leading-[1.12]">
+              Frontier Research &amp; <span className="font-semibold evar-text-gradient">Publications</span>
             </h2>
-            <p className="mt-4 text-base text-[#a7a6a6] leading-relaxed">
+            <p className="mt-3.5 sm:mt-4 text-sm sm:text-base md:text-lg text-[#475569] dark:text-[#a7a6a6] leading-relaxed">
               Our multidisciplinary research team publishes foundational papers on mathematical alignment,
-              adversarial robustness, and biometric deepfake defenses.
+              adversarial robustness, biometric defenses, and safe autonomous agent coordination.
             </p>
           </div>
           <Link
@@ -91,8 +91,8 @@ export default function ResearchShowcase({
         </div>
 
         {downloadSuccess && (
-          <div className="mb-6 p-4 rounded-xl bg-white/[0.03] border border-white/20 text-[#fafafa] text-xs flex items-center space-x-2">
-            <CheckCircle className="w-4 h-4 text-white" />
+          <div className="mb-6 p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-[#00212b] dark:text-[#fafafa] text-xs flex items-center space-x-2">
+            <CheckCircle className="w-4 h-4 text-cyan-500" />
             <span>
               Secure whitepaper bundle generated for: <strong>{downloadSuccess}</strong> (SHA-256 Verified).
             </span>
@@ -109,25 +109,25 @@ export default function ResearchShowcase({
                 <span className="badge-pill">
                   {paper.category}
                 </span>
-                <span className="text-xs text-[#8b8a8a]">{paper.publicationDate}</span>
-                <span className="text-xs text-[#8b8a8a]">&bull; {paper.readTime}</span>
+                <span className="text-xs text-[#64748b] dark:text-[#8b8a8a]">{paper.publicationDate}</span>
+                <span className="text-xs text-[#64748b] dark:text-[#8b8a8a]">&bull; {paper.readTime}</span>
               </div>
 
-              <h3 className="text-xl font-normal text-[#fafafa] mb-2 leading-snug">
+              <h3 className="text-xl font-semibold text-[#00212b] dark:text-[#fafafa] mb-2 leading-snug">
                 {paper.title}
               </h3>
 
-              <div className="text-xs text-[#8b8a8a] mb-4 font-mono">
+              <div className="text-xs text-[#64748b] dark:text-[#8b8a8a] mb-4 font-mono">
                 {paper.authors}
               </div>
 
-              <p className="text-xs sm:text-sm text-[#a7a6a6] leading-relaxed mb-6 font-normal">
+              <p className="text-xs sm:text-sm text-[#475569] dark:text-[#a7a6a6] leading-relaxed mb-6 font-normal">
                 {paper.abstract}
               </p>
 
-              <div className="pt-4 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <span className="text-[11px] font-mono text-[#8b8a8a]">
-                  Peer-Reviewed Whitepaper
+              <div className="pt-4 border-t border-[#00212b]/10 dark:border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <span className="text-[11px] font-mono text-[#64748b] dark:text-[#8b8a8a]">
+                  Peer-Reviewed Whitepaper &bull; EVAR Labs
                 </span>
                 <div className="flex items-center space-x-3 w-full sm:w-auto">
                   <button

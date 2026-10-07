@@ -33,7 +33,7 @@ export default function AdminMessagesPage() {
         <div>
           <h2 className="text-xl font-bold text-slate-900">Inbound Advisory Inquiries</h2>
           <p className="text-xs text-slate-500">
-            Encrypted client inquiries ingested through the shift-left honeypot gateway.
+            Encrypted client inquiries ingested through the verified security gateway.
           </p>
         </div>
       </div>
@@ -54,7 +54,7 @@ export default function AdminMessagesPage() {
                 Category: AI Safety & Guardrail Audits
               </div>
               <p className="text-xs text-slate-500 line-clamp-2">
-                We are preparing to deploy a 70B foundation model internally for legal compliance and require a comprehensive shift-left adversarial red-team audit before release...
+                We are preparing to deploy a 70B foundation model internally for legal compliance and require a comprehensive adversarial AI safety audit before release...
               </p>
               <div className="text-[10px] text-slate-400 mt-2 font-mono">
                 Organization: Nexus Global Financial &bull; IP Hash: 8f4a21e09c
@@ -101,7 +101,7 @@ export default function AdminMessagesPage() {
             <div>
               <div className="text-[10px] uppercase font-bold text-slate-400">Full Inquiry Message</div>
               <div className="text-xs text-slate-600 leading-relaxed bg-white p-3 rounded-lg border border-slate-200 mt-1">
-                We are preparing to deploy a 70B foundation model internally for legal compliance and require a comprehensive shift-left adversarial red-team audit before release. Specifically, we need validation against indirect prompt injections and data extraction exploits.
+                We are preparing to deploy a 70B foundation model internally for legal compliance and require a comprehensive adversarial AI safety audit before release. Specifically, we need validation against indirect prompt injections and data extraction exploits.
               </div>
             </div>
           </div>

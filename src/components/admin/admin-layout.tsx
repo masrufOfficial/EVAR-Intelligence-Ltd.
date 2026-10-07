@@ -91,7 +91,7 @@ export default function AdminLayout({
         <Link href="/admin" className="flex items-center space-x-2">
           <div className="relative h-7 w-20">
             <Image
-              src="/images/evar-logo.png"
+              src="/images/evar-logo-dark.png"
               alt="EVAR Intelligence"
               fill
               className="object-contain"
@@ -118,7 +118,7 @@ export default function AdminLayout({
           <div className="p-6 border-b border-slate-800/80">
             <Link href="/" className="inline-block relative h-9 w-28 mb-1">
               <Image
-                src="/images/evar-logo.png"
+                src="/images/evar-logo-dark.png"
                 alt="EVAR Intelligence"
                 fill
                 className="object-contain"
@@ -126,7 +126,7 @@ export default function AdminLayout({
             </Link>
             <div className="text-[10px] text-slate-400 font-mono flex items-center space-x-1.5 mt-1">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Shift-Left Console v1.0</span>
+              <span>EVAR Operations Console v1.0</span>
             </div>
           </div>
 
@@ -229,7 +229,7 @@ export default function AdminLayout({
           <div className="flex items-center space-x-3">
             <div className="hidden sm:flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-medium">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Shift-Left Active</span>
+              <span>AI Safety Guard Active</span>
             </div>
 
             <Link
