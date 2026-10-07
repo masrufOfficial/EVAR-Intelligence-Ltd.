@@ -12,7 +12,7 @@ STRICT CORE PRINCIPLES:
 3. NO INTERNAL THOUGHTS OR OUTLINES: Never output thinking tags, brainstorming notes, or lists of options. Output ONLY your direct conversational message to the user.
 4. EVAR'S 5 CORE SPECIALTIES:
    - AI Safety: Safer, reliable, human-centered AI with mathematical alignment & ISO 42001 guardrails.
-   - AI Awareness: Executive governance masterclasses & workforce AI literacy bootcamps.
+   - AI Awareness: Global public campaigns, industry advocacy initiatives, and community outreach drives.
    - Intelligent Software: Cloud-native architectures embedded with cognitive AI capabilities.
    - AI Product Development: Practical enterprise products like EVAR Sentinel Verifier & Cognitive OS.
    - AI Automation: Multi-agent systems automating complex workflows with human oversight.
@@ -58,16 +58,15 @@ function getCounselorResponse(userQuery: string): string {
     return 'Our AI Safety research develops mathematical alignment guarantees and deterministic guardrails so models remain bounded and human-centered. You can learn more in our [AI Safety section](/#ai-safety).';
   }
 
-  // 5. AI Awareness
   if (
     q.includes('aware') ||
-    q.includes('train') ||
-    q.includes('literacy') ||
-    q.includes('governance') ||
-    q.includes('masterclass') ||
-    q.includes('education')
+    q.includes('campaign') ||
+    q.includes('advoca') ||
+    q.includes('initiative') ||
+    q.includes('outreach') ||
+    q.includes('public')
   ) {
-    return 'Our AI Awareness programs prepare organizations for the modern AI shift through executive governance masterclasses and workforce literacy bootcamps. Check the curriculum in our [AI Awareness section](/#ai-awareness).';
+    return 'Our AI Awareness specialty promotes human protection through global campaigns, industry advocacy initiatives, and community outreach drives. Explore our active initiatives in the [AI Awareness section](/#ai-awareness).';
   }
 
   // 6. Intelligent Software
@@ -201,16 +200,15 @@ function getCounselorResponse(userQuery: string): string {
     return 'Our AI Safety research develops mathematical alignment guarantees and deterministic guardrails so models remain bounded and human-centered. You can learn more in our [AI Safety section](/#ai-safety).';
   }
 
-  // AI Awareness
   if (
     q.includes('aware') ||
-    q.includes('train') ||
-    q.includes('literacy') ||
-    q.includes('governance') ||
-    q.includes('masterclass') ||
-    q.includes('education')
+    q.includes('campaign') ||
+    q.includes('advoca') ||
+    q.includes('initiative') ||
+    q.includes('outreach') ||
+    q.includes('public')
   ) {
-    return 'Our AI Awareness programs prepare organizations for the modern AI shift through executive governance masterclasses and workforce literacy bootcamps. Check the curriculum in our [AI Awareness section](/#ai-awareness).';
+    return 'Our AI Awareness specialty promotes human protection through global campaigns, industry advocacy initiatives, and community outreach drives. Explore our active initiatives in the [AI Awareness section](/#ai-awareness).';
   }
 
   // Intelligent Software

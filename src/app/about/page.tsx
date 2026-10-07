@@ -110,7 +110,7 @@ export default function AboutPage() {
             Partner With <span className="font-semibold evar-text-gradient">EVAR Intelligence</span>
           </h2>
           <p className="text-sm text-[#475569] dark:text-[#a7a6a6] max-w-xl mx-auto mb-8 font-normal">
-            Whether your enterprise requires safety verification, executive literacy masterclasses, or custom
+            Whether your enterprise requires safety verification, public AI awareness campaigns, or custom
             multi-agent automation architectures, our team is ready to assist.
           </p>
           <Link

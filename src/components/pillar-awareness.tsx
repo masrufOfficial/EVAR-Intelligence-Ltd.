@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, BookOpen, GraduationCap } from 'lucide-react';
+import { ArrowRight, Megaphone, Globe, Users, Sparkles } from 'lucide-react';
 
 interface AwarenessProgram {
   id: string;
@@ -20,65 +20,65 @@ interface AwarenessProgram {
 const defaultPrograms: AwarenessProgram[] = [
   {
     id: 'prog-1',
-    title: 'Executive AI Governance & Strategic Landscape Masterclass',
-    slug: 'executive-ai-governance',
-    audience: 'C-Suite, Board Directors, Legal & Risk Officers',
-    duration: '2-Day Intensive / 16 Hours',
-    format: 'Executive Immersion',
+    title: '"Human-First AI" Global Awareness Campaign',
+    slug: 'human-first-ai-campaign',
+    audience: 'Global Public, Civil Society & Digital Communities',
+    duration: 'Ongoing Worldwide Movement',
+    format: 'Public Awareness Campaign',
     description:
-      'Equip executive leadership with the critical mental models, strategic frameworks, and technical literacy required to navigate enterprise AI transformation responsibly.',
+      'A worldwide public movement advocating for human dignity, safety rights, and algorithmic transparency as generative models and autonomous agents integrate into everyday society.',
     modules: [
-      'The Geopolitics & Frontier Dynamics of Modern AI',
-      'Global Regulatory Landscapes & Ethical Standards',
-      'Understanding Probabilistic Systems, Hallucinations & Risk',
-      'Establishing Enterprise AI Governance & Human Accountability',
+      'Public Dialogues on Algorithmic Accountability & Ethics',
+      'Community Literacy on Synthetic Media & Deepfake Verification',
+      'Open-Source Human Protection Charters & Principles',
+      'Grassroots Engagement for Digital Sovereignty & Human Agency',
     ],
     outcomes: [
-      'Formulate defensible corporate AI policy guidelines',
-      'Identify unmanaged Shadow-AI vulnerabilities across business units',
-      'Establish clear human accountability metrics for automated systems',
+      'Empower 500,000+ citizens with critical AI discernment tools',
+      'Mobilize public awareness against unvetted automated decisions',
+      'Establish universal expectations for responsible AI transparency',
     ],
   },
   {
     id: 'prog-2',
-    title: 'Modern AI Engineering & Responsible Development Bootcamp',
-    slug: 'responsible-ai-engineering',
-    audience: 'Lead Architects, Software Engineers, Data Teams',
-    duration: '4-Week Hands-On Certification',
-    format: 'Technical Laboratory',
+    title: '"Safe Frontier" Industry Advocacy Initiative',
+    slug: 'safe-frontier-advocacy',
+    audience: 'Technology Leaders, Enterprise Founders & Policy Shapers',
+    duration: 'Active Industry Coalition',
+    format: 'Industry Advocacy Initiative',
     description:
-      'A deep-dive technical certification teaching software teams how to architect, test, and deploy foundation models, agent systems, and automated pipelines with safety built-in.',
+      'An industry-wide coalition mobilizing technology creators, enterprise leaders, and policymakers to champion verifiable safety guardrails, ISO 42001 alignment, and responsible deployment before scale.',
     modules: [
-      'Anatomy of Foundation Models: Capabilities, Limitations & Biases',
-      'Implementing Zero-Latency Verification Guardrails',
-      'Robustness Testing Pipelines in Continuous Integration',
-      'Auditing Agent Memory, Tool Execution & Sandboxing Paradigms',
+      'Demystifying AI Hazards & Systemic Risk Vectors for Decision Makers',
+      'Championing Transparent Model Provenance & Verification Standards',
+      'Advocating Independent Red-Teaming & Safeguard Pledges',
+      'Cross-Sector AI Ethics & Governance Roundtables',
     ],
     outcomes: [
-      'Integrate safety and alignment verifiers into existing software',
-      'Deploy deterministic agent tool call validation',
-      'Master modern AI engineering best practices',
+      'Commitment from 180+ technology organizations to verified safety standards',
+      'Elimination of unmanaged black-box automated deployments',
+      'Cross-industry consensus on verifiable human oversight boundaries',
     ],
   },
   {
     id: 'prog-3',
-    title: 'Workforce AI Literacy & Cognitive Empowerment Program',
-    slug: 'workforce-ai-literacy',
-    audience: 'All Organizational Employees & Knowledge Workers',
-    duration: 'Self-Paced Modular (8 Modules)',
-    format: 'Interactive Learning Platform',
+    title: '"Next-Gen AI Ethics" Youth & Community Drive',
+    slug: 'next-gen-ai-ethics',
+    audience: 'Students, Young Innovators & Tech Educators',
+    duration: 'Academic & Regional Outreach',
+    format: 'Community Outreach Drive',
     description:
-      'Demystify generative tools for every employee while embedding instinctual data hygiene, verifying AI outputs, and fostering human-AI collaborative productivity.',
+      'Empowering future technologists, researchers, and student innovators to build AI systems that respect human privacy, uplift human potential, and protect societal welfare.',
     modules: [
-      'Demystifying How AI Works: Capabilities vs. Hallucinations',
-      'Data Privacy Hygiene: What Never to Paste into Public AI Services',
-      'Prompt Crafting for Precision, Logic Verification & Critical Thinking',
-      'Spotting AI-Generated Social Engineering & Deepfake Impersonations',
+      'Critical Thinking in the Generative Synthetic Era',
+      'Responsible Innovation & Social Welfare Hack-for-Good Drives',
+      'Ethics-by-Design Toolkits for Emerging Creators',
+      'Bridging Digital Divides Across Regional Communities',
     ],
     outcomes: [
-      '100% elimination of accidental confidential data leaks to public LLMs',
-      '40% measured uplift in daily knowledge worker task velocity',
-      'Institutional confidence across the evolving AI landscape',
+      'Active advocacy partnerships across 30+ educational institutions',
+      'Widespread adoption of ethical AI creation frameworks by students',
+      'Creation of grassroots youth task forces for responsible innovation',
     ],
   },
 ];
@@ -93,16 +93,16 @@ export default function PillarAwareness({ programs = defaultPrograms }: { progra
             Specialty 02 &bull; AI Awareness
           </div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-light text-[#00212b] dark:text-[#fafafa] tracking-tight leading-[1.12]">
-            Promoting Understanding Across The <span className="font-semibold evar-text-gradient">AI Landscape</span>
+            Championing Awareness Across The <span className="font-semibold evar-text-gradient">AI Landscape</span>
           </h2>
           <p className="mt-3.5 sm:mt-4 text-sm sm:text-base md:text-lg text-[#475569] dark:text-[#a7a6a6] leading-relaxed">
-            We promote AI awareness and understanding to help people and organizations navigate
-            the evolving AI landscape. Through structured masterclasses, technical bootcamps, and
-            workforce literacy programs, we turn ambiguity into strategic mastery.
+            We promote AI awareness through public campaigns, industry advocacy, and community
+            initiatives to help people and organizations navigate the evolving AI landscape.
+            Through open forums and collective engagement, we champion human protection and informed adoption.
           </p>
         </div>
 
-        {/* 3 Interactive Curriculums */}
+        {/* 3 Interactive Campaigns & Initiatives */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {programs.map((item, index) => (
             <div
@@ -127,10 +127,10 @@ export default function PillarAwareness({ programs = defaultPrograms }: { progra
 
                 <div className="space-y-3 pt-6 border-t border-[#00212b]/10 dark:border-white/[0.06]">
                   <div className="text-[10px] font-mono uppercase tracking-wider text-[#64748b] dark:text-[#8b8a8a]">
-                    Core Syllabus
+                    Campaign Focus Areas
                   </div>
                   <ul className="space-y-2">
-                    {item.modules.slice(0, 3).map((mod, i) => (
+                    {item.modules.slice(0, 4).map((mod, i) => (
                       <li key={i} className="text-xs text-[#334155] dark:text-[#d1d5db] flex items-start space-x-2">
                         <span className="text-cyan-500 shrink-0 mt-0.5">&bull;</span>
                         <span>{mod}</span>
@@ -148,7 +148,7 @@ export default function PillarAwareness({ programs = defaultPrograms }: { progra
                   href="/contact"
                   className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:underline inline-flex items-center space-x-1"
                 >
-                  <span>Enroll Program</span>
+                  <span>Support Campaign</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

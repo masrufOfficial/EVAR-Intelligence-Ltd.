@@ -236,9 +236,9 @@ export default function Hero3D() {
               <div className="text-xs font-bold uppercase tracking-wider text-fuchsia-400">
                 Pillar 01
               </div>
-              <h3 className="text-sm font-semibold text-white">AI Awareness & Literacy</h3>
+              <h3 className="text-sm font-semibold text-white">AI Awareness & Campaigns</h3>
               <p className="text-xs text-slate-400 mt-0.5">
-                Executive masterclasses, workforce literacy, red-teaming, and responsible AI governance.
+                Public awareness campaigns, ethics advocacy, deepfake defense, and responsible AI governance.
               </p>
             </div>
           </div>

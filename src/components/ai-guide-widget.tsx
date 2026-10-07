@@ -15,7 +15,7 @@ const quickSuggestions = [
   'What are your 5 specialties?',
   'How does EVAR guarantee AI Safety?',
   'What enterprise automation do you offer?',
-  'Tell me about executive AI training',
+  'Tell me about AI awareness campaigns',
 ];
 
 export default function AiGuideWidget() {

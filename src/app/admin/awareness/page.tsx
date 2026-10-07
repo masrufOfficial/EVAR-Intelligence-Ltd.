@@ -13,14 +13,14 @@ export default async function AdminAwarenessPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold text-slate-900">AI Awareness & Literacy Programs</h2>
+          <h2 className="text-xl font-bold text-slate-900">AI Awareness Campaigns & Advocacy</h2>
           <p className="text-xs text-slate-500">
-            Manage Pillar 01 curriculums, masterclasses, and enterprise literacy certifications.
+            Manage public campaigns, industry advocacy movements, and community outreach drives.
           </p>
         </div>
         <button className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm transition-colors flex items-center space-x-1.5 self-start sm:self-auto">
           <Plus className="w-4 h-4" />
-          <span>New Curriculum Module</span>
+          <span>New Campaign Initiative</span>
         </button>
       </div>
 
@@ -43,7 +43,7 @@ export default async function AdminAwarenessPage() {
                 </div>
                 <div className="space-y-1 pt-3 border-t border-slate-100">
                   <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    {modules.length} Core Modules
+                    {modules.length} Focus Areas
                   </div>
                   {modules.slice(0, 2).map((m, i) => (
                     <div key={i} className="text-xs text-slate-600 truncate">
@@ -53,9 +53,9 @@ export default async function AdminAwarenessPage() {
                 </div>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs text-emerald-600 font-semibold">Active Enrollment</span>
+                <span className="text-xs text-emerald-600 font-semibold">Active Initiative</span>
                 <button className="text-xs text-blue-600 hover:text-blue-700 font-semibold">
-                  Edit Syllabus
+                  Edit Campaign
                 </button>
               </div>
             </div>

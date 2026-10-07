@@ -69,10 +69,10 @@ export default function AdminMessagesPage() {
                 </span>
               </div>
               <div className="text-xs text-slate-600 font-medium mb-1">
-                Category: Pillar 01: Executive AI Governance
+                Category: Specialty 02: AI Awareness & Advocacy
               </div>
               <p className="text-xs text-slate-500 line-clamp-2">
-                Interested in enrolling 14 board members into the upcoming 2-Day Executive AI Governance & Strategic Risk Masterclass...
+                Interested in partnering 14 board members with the upcoming Global Responsible AI Public Campaign &amp; Governance Initiative...
               </p>
               <div className="text-[10px] text-slate-400 mt-2 font-mono">
                 Organization: Zenith Health Group &bull; IP Hash: 3e9d821a7b

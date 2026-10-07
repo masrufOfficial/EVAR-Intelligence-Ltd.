@@ -209,65 +209,65 @@ async function main() {
   }
   console.log(`Seeded ${products.length} Products`);
 
-  // 4. Seed AI Awareness Programs (Pillar 01)
+  // 4. Seed AI Awareness Campaigns & Initiatives (Specialty 02)
   const programs = [
     {
-      title: 'Executive AI Governance & Strategic Risk Masterclass',
-      slug: 'executive-ai-governance',
-      audience: 'C-Suite, Board Directors, Legal & Risk Officers',
-      duration: '2-Day Intensive / 16 Hours',
-      format: 'Executive Immersion & Simulation',
-      description: 'Equip senior executive leadership with the critical mental models, legal frameworks, and technical literacy required to navigate enterprise AI transformation safely.',
+      title: '"Human-First AI" Global Awareness Campaign',
+      slug: 'human-first-ai-campaign',
+      audience: 'Global Public, Civil Society & Digital Communities',
+      duration: 'Ongoing Worldwide Movement',
+      format: 'Public Awareness Campaign',
+      description: 'A worldwide public movement advocating for human dignity, safety rights, and algorithmic transparency as generative models and autonomous agents integrate into everyday society.',
       modules: JSON.stringify([
-        'The Geopolitics & Frontier Dynamics of Generative AI',
-        'EU AI Act, ISO 42001 & Emerging Global Regulatory Frameworks',
-        'Adversarial AI Risk: Understanding Prompt Injection, Data Poisoning & Liability',
-        'Building an Enterprise AI Safety Board & Shift-Left Governance'
+        'Public Dialogues on Algorithmic Accountability & Ethics',
+        'Community Literacy on Synthetic Media & Deepfake Verification',
+        'Open-Source Human Protection Charters & Principles',
+        'Grassroots Engagement for Digital Sovereignty & Human Agency'
       ]),
       outcomes: JSON.stringify([
-        'Formulate defensible corporate AI policy guidelines',
-        'Identify unmanaged Shadow-AI vulnerabilities across business units',
-        'Establish clear human accountability metrics for automated systems'
+        'Empower 500,000+ citizens with critical AI discernment tools',
+        'Mobilize public awareness against unvetted automated decisions',
+        'Establish universal expectations for responsible AI transparency'
       ]),
       isFeatured: true,
     },
     {
-      title: 'Shift-Left AI Engineering & Red-Teaming Bootcamp',
-      slug: 'shift-left-ai-engineering',
-      audience: 'Lead Architects, Machine Learning Engineers, DevSecOps Teams',
-      duration: '4-Week Hands-On Certification',
-      format: 'Laboratory & Live Fire Red-Teaming',
-      description: 'A deep-dive technical certification teaching software teams how to architect, test, and harden foundation models, agent systems, and automated pipelines before production deployment.',
+      title: '"Safe Frontier" Industry Advocacy Initiative',
+      slug: 'safe-frontier-advocacy',
+      audience: 'Technology Leaders, Enterprise Founders & Policy Shapers',
+      duration: 'Active Industry Coalition',
+      format: 'Industry Advocacy Initiative',
+      description: 'An industry-wide coalition mobilizing technology creators, enterprise leaders, and policymakers to champion verifiable safety guardrails, ISO 42001 alignment, and responsible deployment before scale.',
       modules: JSON.stringify([
-        'Anatomy of Foundation Model Exploits: Indirect Injections & Model Inversion',
-        'Implementing Zero-Latency Guardrail Architectures & Semantic Sanitizers',
-        'Automated Adversarial Red-Teaming Pipelines in CI/CD',
-        'Auditing Agent Memory, Tool Execution & Sandboxing Paradigms'
+        'Demystifying AI Hazards & Systemic Risk Vectors for Decision Makers',
+        'Championing Transparent Model Provenance & Verification Standards',
+        'Advocating Independent Red-Teaming & Safeguard Pledges',
+        'Cross-Sector AI Ethics & Governance Roundtables'
       ]),
       outcomes: JSON.stringify([
-        'Integrate shift-left security gates into existing ML pipelines',
-        'Deploy deterministic agent tool call validation',
-        'Achieve EVAR Certified AI Security Practitioner (CASP) credentials'
+        'Commitment from 180+ technology organizations to verified safety standards',
+        'Elimination of unmanaged black-box automated deployments',
+        'Cross-industry consensus on verifiable human oversight boundaries'
       ]),
       isFeatured: true,
     },
     {
-      title: 'Workforce AI Literacy & Cognitive Empowerment Program',
-      slug: 'workforce-ai-literacy',
-      audience: 'All Organizational Employees & Knowledge Workers',
-      duration: 'Self-Paced Modular (8 Modules)',
-      format: 'Interactive Micro-Learning Platform',
-      description: 'Demystify generative tools for every employee while embedding instinctual security hygiene, preventing confidential data leaks, and fostering human-AI collaborative productivity.',
+      title: '"Next-Gen AI Ethics" Youth & Community Drive',
+      slug: 'next-gen-ai-ethics',
+      audience: 'Students, Young Innovators & Tech Educators',
+      duration: 'Academic & Regional Outreach',
+      format: 'Community Outreach Drive',
+      description: 'Empowering future technologists, researchers, and student innovators to build AI systems that respect human privacy, uplift human potential, and protect societal welfare.',
       modules: JSON.stringify([
-        'Demystifying How AI Works: Capabilities vs. Hallucinations',
-        'Data Privacy Hygiene: What Never to Paste into Public AI Services',
-        'Prompt Crafting for Precision, Logic Verification & Bias Detection',
-        'Spotting AI-Generated Social Engineering & Deepfake Impersonations'
+        'Critical Thinking in the Generative Synthetic Era',
+        'Responsible Innovation & Social Welfare Hack-for-Good Drives',
+        'Ethics-by-Design Toolkits for Emerging Creators',
+        'Bridging Digital Divides Across Regional Communities'
       ]),
       outcomes: JSON.stringify([
-        '100% elimination of accidental confidential data leaks to public LLMs',
-        '40% measured uplift in daily knowledge worker task velocity',
-        'Institutional resilience against AI-powered spear-phishing'
+        'Active advocacy partnerships across 30+ educational institutions',
+        'Widespread adoption of ethical AI creation frameworks by students',
+        'Creation of grassroots youth task forces for responsible innovation'
       ]),
       isFeatured: true,
     }
