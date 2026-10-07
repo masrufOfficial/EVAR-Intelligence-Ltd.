@@ -31,7 +31,7 @@ export default function HeroCinematic() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[88vh] sm:min-h-[92vh] flex flex-col justify-center pt-28 sm:pt-36 pb-16 px-5 sm:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section className="relative w-full min-h-0 sm:min-h-[88vh] lg:min-h-[92vh] flex flex-col justify-center pt-20 sm:pt-32 lg:pt-36 pb-8 sm:pb-16 px-5 sm:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Background Plate: Previous Cinematic Deep #00212b Video & Neon Glow with Scroll-Zoom */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Animated Zoom Wrapper */}
@@ -83,15 +83,15 @@ export default function HeroCinematic() {
       </div>
 
       {/* Hero Typography & Primary Actions */}
-      <div className="relative z-10 max-w-4xl my-auto">
+      <div className="relative z-10 max-w-4xl my-0 sm:my-auto">
         {/* Brand Mission Pill */}
-        <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 rounded-full bg-[#002a36]/80 border border-cyan-500/20 text-[10px] sm:text-xs text-cyan-300 font-semibold uppercase tracking-wider mb-5 sm:mb-6 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#002a36]/80 border border-cyan-500/20 text-[10px] sm:text-xs text-cyan-300 font-semibold uppercase tracking-wider mb-4 sm:mb-6 backdrop-blur-md shadow-sm transition-all duration-300">
           <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse shrink-0" />
           <span className="truncate">An Innovation Hub For Human Protection In The Age Of AI</span>
         </div>
 
         {/* Fluid Responsive Headline */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.1] sm:leading-[1.06] mb-5 sm:mb-6 text-[#f8fafc]">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.14] sm:leading-[1.06] mb-4 sm:mb-6 text-[#f8fafc]">
           <span className="block font-normal">Pioneering The Next Layer</span>
           <span className="block font-semibold evar-text-gradient">
             Of Intelligent Innovation
@@ -99,24 +99,24 @@ export default function HeroCinematic() {
         </h1>
 
         {/* Fluid Responsive Subtitle */}
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#cbd5e1] leading-relaxed max-w-2xl mb-8 sm:mb-10 font-normal">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#cbd5e1] leading-relaxed max-w-2xl mb-6 sm:mb-10 font-normal">
           EVAR Intelligence Ltd. builds intelligent solutions for a safer tomorrow. We research and
           engineer human-centered AI across five core disciplines: AI Safety, AI Awareness,
           Intelligent Software, AI Product Development, and AI Automation.
         </p>
 
         {/* Primary Action Buttons */}
-        <div className="flex flex-wrap items-center gap-3.5 sm:gap-5 mb-10 sm:mb-12">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-5 mb-7 sm:mb-12">
           <Link
             href="#specialties"
-            className="pill-btn !py-3 sm:!py-3.5 !px-6 sm:!px-8 text-xs sm:text-sm shadow-md hover:shadow-cyan-500/20 transition-all duration-300"
+            className="pill-btn !py-2.5 sm:!py-3.5 !px-5 sm:!px-8 text-xs sm:text-sm shadow-md hover:shadow-cyan-500/20 transition-all duration-300"
           >
             <span>Explore 5 Specialties</span>
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
           <Link
             href="/products"
-            className="ghost-btn !py-3 sm:!py-3.5 !px-6 sm:!px-7 text-xs sm:text-sm font-medium transition-all duration-300"
+            className="ghost-btn !py-2.5 sm:!py-3.5 !px-5 sm:!px-7 text-xs sm:text-sm font-medium transition-all duration-300"
           >
             <span>View Solutions</span>
           </Link>
@@ -134,7 +134,7 @@ export default function HeroCinematic() {
             <Link
               key={idx}
               href={item.href}
-              className="flex items-center space-x-2 px-3 py-2 sm:py-2.5 rounded-xl bg-[#002a36]/60 border border-white/5 hover:border-cyan-500/40 hover:bg-[#003444] transition-all duration-300 text-[11px] sm:text-xs font-medium text-[#cbd5e1] hover:text-cyan-300 shadow-sm"
+              className="flex items-center space-x-2 px-2.5 py-1.5 sm:px-3 sm:py-2.5 rounded-xl bg-[#002a36]/60 border border-white/5 hover:border-cyan-500/40 hover:bg-[#003444] transition-all duration-300 text-[11px] sm:text-xs font-medium text-[#cbd5e1] hover:text-cyan-300 shadow-sm"
             >
               <item.icon className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               <span className="truncate">{item.name}</span>

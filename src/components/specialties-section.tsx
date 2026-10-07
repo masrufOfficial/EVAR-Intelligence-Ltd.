@@ -180,11 +180,11 @@ export default function SpecialtiesSection() {
   return (
     <section
       id="specialties"
-      className="py-20 sm:py-28 lg:py-32 relative bg-transparent border-t border-white/[0.08]"
+      className="pt-10 pb-16 sm:py-28 lg:py-32 relative bg-transparent border-t border-white/[0.08]"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
         {/* Section Header with Responsive Typography */}
-        <div className="max-w-3xl mb-12 sm:mb-16 lg:mb-20">
+        <div className="max-w-3xl mb-8 sm:mb-16 lg:mb-20">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[10px] sm:text-xs font-semibold text-cyan-300 uppercase tracking-widest mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
             <span>Core Pillars &bull; What Defines EVAR</span>
