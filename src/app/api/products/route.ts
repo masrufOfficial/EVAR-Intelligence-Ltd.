@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { authenticateRequest } from '@/lib/auth';
 import { recordAuditLog } from '@/lib/audit';
 import { sanitizeText } from '@/lib/sanitize';
+import { DEFAULT_PRODUCTS } from '@/lib/products-data';
 import { z } from 'zod';
 
 const createProductSchema = z.object({
@@ -46,6 +47,14 @@ export async function GET(req: NextRequest) {
       orderBy: [{ isFeatured: 'desc' }, { createdAt: 'desc' }],
     });
 
+    if (!products || products.length === 0) {
+      let filtered = DEFAULT_PRODUCTS;
+      if (category && category !== 'All Solutions') {
+        filtered = filtered.filter((p) => p.category === category);
+      }
+      return NextResponse.json({ success: true, products: filtered });
+    }
+
     // Format features & technology JSON arrays for clean client consumption
     const formatted = products.map((p) => ({
       ...p,
@@ -56,10 +65,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({ success: true, products: formatted });
   } catch (error) {
-    return NextResponse.json(
-      { error: 'Failed to retrieve products' },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: true, products: DEFAULT_PRODUCTS });
   }
 }
 

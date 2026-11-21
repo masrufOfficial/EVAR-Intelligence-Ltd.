@@ -10,6 +10,7 @@ import ResearchShowcase from '@/components/research-showcase';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
 import { prisma } from '@/lib/prisma';
+import { getVerifiedProducts } from '@/lib/products-data';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,24 +22,12 @@ export const metadata = {
 
 export default async function HomePage() {
   // Fetch database-driven products and content
-  let products: any[] = [];
+  let products = await getVerifiedProducts();
   let awarenessPrograms: any[] = [];
   let automationWorkflows: any[] = [];
   let researchPapers: any[] = [];
 
   try {
-    const rawProducts = await prisma.product.findMany({
-      where: { status: 'published' },
-      orderBy: [{ isFeatured: 'desc' }, { createdAt: 'desc' }],
-    });
-
-    products = rawProducts.map((p) => ({
-      ...p,
-      features: JSON.parse(p.features || '[]'),
-      technology: JSON.parse(p.technology || '[]'),
-      gallery: JSON.parse(p.gallery || '[]'),
-    }));
-
     const rawPrograms = await prisma.awarenessProgram.findMany({
       orderBy: { createdAt: 'asc' },
     });

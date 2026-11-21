@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import { prisma } from '@/lib/prisma';
+import { getVerifiedProductBySlug } from '@/lib/products-data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -10,9 +10,7 @@ import { ArrowRight, ChevronLeft } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const product = await prisma.product.findUnique({
-    where: { slug: params.slug },
-  });
+  const product = await getVerifiedProductBySlug(params.slug);
 
   if (!product) return { title: 'Product Not Found | EVAR Intelligence Ltd.' };
 
@@ -27,17 +25,15 @@ export default async function ProductDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const product = await prisma.product.findUnique({
-    where: { slug: params.slug },
-  });
+  const product = await getVerifiedProductBySlug(params.slug);
 
   if (!product) {
     notFound();
   }
 
-  const features: string[] = JSON.parse(product.features || '[]');
-  const technology: string[] = JSON.parse(product.technology || '[]');
-  const gallery: string[] = JSON.parse(product.gallery || '[]');
+  const features: string[] = product.features || [];
+  const technology: string[] = product.technology || [];
+  const gallery: string[] = product.gallery || [];
 
   return (
     <div className="min-h-screen bg-[var(--stage-bg)] text-[var(--ink)] flex flex-col">

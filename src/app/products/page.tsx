@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import ProductGrid from '@/components/product-grid';
-import { prisma } from '@/lib/prisma';
+import { getVerifiedProducts } from '@/lib/products-data';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,21 +13,7 @@ export const metadata = {
 };
 
 export default async function ProductsPage() {
-  let products: any[] = [];
-  try {
-    const raw = await prisma.product.findMany({
-      where: { status: 'published' },
-      orderBy: [{ isFeatured: 'desc' }, { createdAt: 'desc' }],
-    });
-    products = raw.map((p) => ({
-      ...p,
-      features: JSON.parse(p.features || '[]'),
-      technology: JSON.parse(p.technology || '[]'),
-      gallery: JSON.parse(p.gallery || '[]'),
-    }));
-  } catch (err) {
-    console.error(err);
-  }
+  const products = await getVerifiedProducts();
 
   return (
     <div className="min-h-screen bg-[var(--stage-bg)] text-[var(--ink)] flex flex-col">
