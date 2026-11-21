@@ -49,7 +49,7 @@ interface Researcher {
   }[];
 }
 
-// 1. Shisir, 2. Masruf, 3. Mehrin, 4. Faisal
+// 1. Shisir, 2. Masruf, 3. Mim, 4. Faisal
 const researchers: Researcher[] = [
   {
     id: 'shisir',
@@ -116,8 +116,8 @@ const researchers: Researcher[] = [
     ],
   },
   {
-    id: 'mehrin',
-    name: 'Mehbuba Mehrin Mim',
+    id: 'mim',
+    name: 'Mahbuba Islam Mim',
     image: '/images/team/mehbuba-mehrin-mim.png',
     specialization: 'AI Governance, Human Factors & Societal Impact',
     profile:

@@ -307,7 +307,7 @@ export default function FoundersSection() {
             </div>
           </div>
 
-          {/* Founder 2: Mehbuba Mehrin Mim */}
+          {/* Founder 2: Mahbuba Islam Mim */}
           <div className="dark-panel p-7 sm:p-9 flex flex-col justify-between group relative overflow-hidden transition-all duration-300 hover:border-fuchsia-500/40 hover:shadow-fuchsia-500/10">
             {/* Ambient Background Gradient Halo */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-fuchsia-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -317,7 +317,7 @@ export default function FoundersSection() {
               <div className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden mb-6 bg-[#00171f] border border-[#00212b]/10 dark:border-white/10 group-hover:border-fuchsia-500/30 transition-all duration-500">
                 <Image
                   src="/images/team/mehbuba-mehrin-mim.png"
-                  alt="Mehbuba Mehrin Mim - COO & HR, Founder"
+                  alt="Mahbuba Islam Mim - COO & HR, Founder"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 550px"
@@ -335,7 +335,7 @@ export default function FoundersSection() {
               {/* Name & Titles */}
               <div className="mb-4">
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#00212b] dark:text-white tracking-tight mb-1 group-hover:text-fuchsia-600 dark:group-hover:text-fuchsia-300 transition-colors">
-                  Mehbuba Mehrin Mim
+                  Mahbuba Islam Mim
                 </h3>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs sm:text-sm font-semibold text-fuchsia-600 dark:text-fuchsia-400 font-mono">

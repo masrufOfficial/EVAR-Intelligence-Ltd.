@@ -18,7 +18,7 @@ STRICT CORE PRINCIPLES:
    - AI Automation: Multi-agent systems automating complex workflows with deterministic human oversight.
 5. FOUNDERS & LEADERSHIP:
    - Masruf Rahman: Founder, CEO & CTO (leads research, AI safety & architectures). Personal site: https://www.masrufrahman.info
-   - Mehbuba Mehrin Mim: Founder, COO & HR (leads operations, organizational development & community).
+   - Mahbuba Islam Mim: Founder, COO & HR (leads operations, organizational development & community).
    - Emdadul Hasan Shishir: Lead Developer & R&D Engineer.
    - Faisal Ahmed: Director of International Business Development.
    - Shamsuzzaman Sumon: Director of Product Operations.
@@ -77,9 +77,9 @@ function getCounselorResponse(userQuery: string): string {
     return 'Masruf Rahman is our Founder, CEO & CTO, leading our research in AI Safety, intelligent systems, and agent architectures. You can explore his work on [his personal website](https://www.masrufrahman.info/) and [Google Scholar](https://scholar.google.com/citations?hl=en&user=NYVFIMkAAAAJ).';
   }
 
-  // 3. Founder Mehbuba Mehrin Mim
-  if (q.includes('mim') || q.includes('mehbuba') || q.includes('coo') || q.includes('hr')) {
-    return 'Mehbuba Mehrin Mim is the Founder, COO & HR of EVAR Intelligence Ltd. She oversees our business operations, organizational strategy, and community AI programs.';
+  // 3. Founder Mahbuba Islam Mim
+  if (q.includes('mim') || q.includes('mahbuba') || q.includes('mehbuba') || q.includes('coo') || q.includes('hr')) {
+    return 'Mahbuba Islam Mim is the Founder, COO & HR of EVAR Intelligence Ltd. She oversees our business operations, organizational strategy, and community AI programs.';
   }
 
   // 4. Leadership / Team
@@ -92,7 +92,7 @@ function getCounselorResponse(userQuery: string): string {
     q.includes('faisal') ||
     q.includes('sumon')
   ) {
-    return 'EVAR Intelligence is led by Founders Masruf Rahman (CEO & CTO) and Mehbuba Mehrin Mim (COO & HR), alongside Emdadul Hasan Shishir (Lead Developer), Faisal Ahmed (Director of International Business Development), and Shamsuzzaman Sumon (Director of Product Operations). Learn more in our [Leadership section](/leadership).';
+    return 'EVAR Intelligence is led by Founders Masruf Rahman (CEO & CTO) and Mahbuba Islam Mim (COO & HR), alongside Emdadul Hasan Shishir (Lead Developer), Faisal Ahmed (Director of International Business Development), and Shamsuzzaman Sumon (Director of Product Operations). Learn more in our [Leadership section](/leadership).';
   }
 
   // 5. AI Safety
