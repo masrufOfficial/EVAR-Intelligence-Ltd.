@@ -112,6 +112,13 @@ export default function ProductPreviewViewport({ slug, name, demoUrl }: PreviewP
               </div>
               <span className="text-cyan-400 font-mono font-bold">৳15,000</span>
             </div>
+            <div className="p-1.5 rounded bg-black/40 border border-white/5 flex items-center justify-between">
+              <div>
+                <span className="font-bold text-white block">AI &amp; Machine Learning Engineering</span>
+                <span className="text-[8px] text-slate-400">90 Hours &bull; Practical Lab Driven</span>
+              </div>
+              <span className="text-cyan-400 font-mono font-bold">৳16,000</span>
+            </div>
           </div>
         ) : (
           <div className="p-2 rounded bg-black/50 border border-cyan-500/20 text-[8px] font-mono">
@@ -125,6 +132,12 @@ export default function ProductPreviewViewport({ slug, name, demoUrl }: PreviewP
             </div>
           </div>
         )}
+
+        {/* Admission Support Hotline */}
+        <div className="mt-2 p-1.5 rounded bg-cyan-950/30 border border-cyan-500/20 flex items-center justify-between text-[8px] font-mono text-cyan-300">
+          <span>Admissions Hotline:</span>
+          <span className="font-bold text-white">01827459921</span>
+        </div>
       </div>
     );
   }
@@ -132,7 +145,7 @@ export default function ProductPreviewViewport({ slug, name, demoUrl }: PreviewP
   // 2. Perfume E-commerce website (AROMA & AESTHETIC)
   if (slug === 'perfume-ecommerce-website') {
     return (
-      <div className="w-full min-h-[360px] p-3 text-[#f5f0e7] bg-[#111111] font-sans select-none">
+      <div className="w-full min-h-[380px] p-3 text-[#f5f0e7] bg-[#111111] font-sans select-none">
         {/* Luxury Top Bar */}
         <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#c6a56b]/30 text-[10px]">
           <div className="flex items-center space-x-1.5 font-serif text-[#e3cb98] font-bold tracking-wider">
@@ -164,7 +177,7 @@ export default function ProductPreviewViewport({ slug, name, demoUrl }: PreviewP
         </div>
 
         {/* Specialized Decant Volume Selector */}
-        <div className="p-2 rounded bg-black/60 border border-[#c6a56b]/20 mb-2.5">
+        <div className="p-2 rounded bg-black/60 border border-[#c6a56b]/20 mb-2">
           <div className="flex items-center justify-between text-[8px] font-mono text-[#c6a56b] mb-1.5">
             <span>DECANT SIZE (PIPETTE CALIBRATED)</span>
             <span>Free Shipping &gt; ৳3,000</span>
@@ -190,9 +203,28 @@ export default function ProductPreviewViewport({ slug, name, demoUrl }: PreviewP
         </div>
 
         {/* Olfactory Notes Breakdown */}
-        <div className="p-2 rounded bg-white/[0.03] border border-white/5 text-[8px] font-mono text-slate-300 flex items-center justify-between">
+        <div className="p-2 rounded bg-white/[0.03] border border-white/5 text-[8px] font-mono text-slate-300 flex items-center justify-between mb-2">
           <span>Top: Bergamot, Pink Pepper</span>
           <span className="text-[#c6a56b] font-bold">Heart: Amber &bull; Oud</span>
+        </div>
+
+        {/* Secondary Fragrance in Catalog */}
+        <div className="p-2 rounded bg-black/40 border border-[#c6a56b]/20 flex items-center justify-between text-[9px]">
+          <div className="flex items-center space-x-2">
+            <div className="relative w-8 h-8 rounded overflow-hidden shrink-0 border border-[#c6a56b]/30">
+              <Image
+                src="/images/products/warm_amber_hero.jpg"
+                alt="Warm Amber"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <span className="font-serif font-bold text-[#e3cb98] block">Warm Amber Extrait</span>
+              <span className="text-[7.5px] font-mono text-slate-400">Bourbon Vanilla &amp; Myrrh</span>
+            </div>
+          </div>
+          <span className="font-mono text-[#c6a56b] font-bold text-[9px]">৳720 BDT</span>
         </div>
       </div>
     );

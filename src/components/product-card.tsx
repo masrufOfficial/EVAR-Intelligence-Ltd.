@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
-import { ExternalLink, Globe, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Globe, ArrowUpRight, ChevronsUpDown } from 'lucide-react';
 import { ProductItem } from './product-modal';
+import ProductPreviewViewport from './product-preview-viewport';
 
 function cleanDomain(url?: string | null) {
   if (!url) return '';
@@ -26,10 +27,31 @@ export default function ProductCard({
   const isExternal = Boolean(product.demoUrl);
   const domain = cleanDomain(product.demoUrl);
 
+  const isDraggingRef = useRef(false);
+  const startPosRef = useRef({ x: 0, y: 0 });
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    isDraggingRef.current = false;
+    startPosRef.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    const dx = Math.abs(e.clientX - startPosRef.current.x);
+    const dy = Math.abs(e.clientY - startPosRef.current.y);
+    if (dx > 7 || dy > 7) {
+      isDraggingRef.current = true;
+    }
+  };
+
   const handleCardClick = (e: React.MouseEvent) => {
-    // If clicking directly on an anchor or button, let native link action happen
+    // If clicking directly on an anchor or interactive button/input, let native action happen
     const target = e.target as HTMLElement;
-    if (target.closest('a') || target.closest('button')) {
+    if (target.closest('a') || target.closest('button') || target.closest('input')) {
+      return;
+    }
+    // If user was scrolling/dragging inside the preview, don't trigger navigation
+    if (isDraggingRef.current) {
+      isDraggingRef.current = false;
       return;
     }
     if (product.demoUrl) {
@@ -41,14 +63,16 @@ export default function ProductCard({
 
   return (
     <div
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
       onClick={handleCardClick}
       className="dark-panel overflow-hidden cursor-pointer group flex flex-col justify-between hover:border-cyan-500/40 hover:shadow-[0_12px_32px_rgba(0,180,216,0.12)] transition-all duration-300 rounded-2xl"
     >
       <div>
-        {/* Sleek macOS Browser Header & Preview Frame */}
-        <div className="relative w-full h-40 sm:h-44 md:h-48 bg-[#001015] border-b border-[#00212b]/10 dark:border-white/10 flex flex-col overflow-hidden">
+        {/* Sleek macOS Browser Header & Scrollable Preview Frame */}
+        <div className="relative w-full h-48 sm:h-52 md:h-56 bg-[#001015] border-b border-[#00212b]/10 dark:border-white/10 flex flex-col overflow-hidden">
           {/* Top Browser Bar */}
-          <div className="h-6 sm:h-7 bg-[#00171f] border-b border-white/5 flex items-center justify-between px-3 text-[10px] text-[#64748b] dark:text-[#94a3b8] font-mono select-none shrink-0 z-20">
+          <div className="h-7 bg-[#00171f] border-b border-white/5 flex items-center justify-between px-3 text-[10px] text-[#64748b] dark:text-[#94a3b8] font-mono select-none shrink-0 z-20">
             {/* Window Controls */}
             <div className="flex items-center space-x-1.5">
               <span className="w-2 h-2 rounded-full bg-rose-500/80" />
@@ -57,53 +81,50 @@ export default function ProductCard({
             </div>
 
             {/* Live Domain Pill */}
-            <div className="flex items-center space-x-1 truncate max-w-[150px] sm:max-w-[180px] text-[#cbd5e1] px-2 py-0.5 rounded bg-black/50 border border-white/10">
+            <div className="flex items-center space-x-1 truncate max-w-[140px] sm:max-w-[170px] text-[#cbd5e1] px-2 py-0.5 rounded bg-black/50 border border-white/10">
               <Globe className="w-2.5 h-2.5 text-cyan-400 shrink-0" />
               <span className="truncate text-[9px] sm:text-[10px] font-mono">
                 {domain || 'evar-preview'}
               </span>
             </div>
 
-            {/* Launch External Link Button */}
-            <a
-              href={targetUrl}
-              target={isExternal ? '_blank' : undefined}
-              rel={isExternal ? 'noopener noreferrer' : undefined}
-              onClick={(e) => e.stopPropagation()}
-              title="Open hosted live site in new tab"
-              className="p-1 text-[#94a3b8] hover:text-cyan-400 transition-colors"
-            >
-              <ExternalLink className="w-3 h-3" />
-            </a>
+            {/* Scrollable Status & External Launch */}
+            <div className="flex items-center space-x-1.5">
+              <span className="hidden sm:inline-flex items-center space-x-0.5 text-[8.5px] font-mono text-cyan-300 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20">
+                <ChevronsUpDown className="w-2.5 h-2.5 text-cyan-400" />
+                <span>Scroll</span>
+              </span>
+              <a
+                href={targetUrl}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+                onClick={(e) => e.stopPropagation()}
+                title="Open hosted live site in new tab"
+                className="p-1 text-[#94a3b8] hover:text-cyan-400 transition-colors"
+              >
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
           </div>
 
-          {/* Real High-Resolution Interface Visual (No Client Hydration Exceptions) */}
-          <div className="relative flex-1 w-full h-full overflow-hidden bg-[#00141b]">
-            <Image
-              src={product.heroMedia}
-              alt={`${product.name} Interface View`}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-500"
-              priority={product.isFeatured}
+          {/* Scrollable Preview Viewport (Touch & Wheel scrollable) */}
+          <div
+            className="relative flex-1 w-full overflow-y-auto overflow-x-hidden overscroll-contain select-none scrollbar-thin scrollbar-thumb-cyan-500/30 hover:scrollbar-thumb-cyan-400/60 scrollbar-track-transparent bg-[#001015]"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'pan-y',
+            }}
+          >
+            <ProductPreviewViewport
+              slug={product.slug}
+              name={product.name}
+              demoUrl={product.demoUrl}
             />
 
-            {/* Hover Quick Action Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#00171f] via-[#00171f]/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-
-            {/* Live Status Pill badge on top of visual */}
-            <div className="absolute bottom-2 left-2.5 flex items-center space-x-1.5">
-              <span className="inline-flex items-center space-x-1 text-[8.5px] font-mono text-emerald-300 bg-black/75 backdrop-blur-md px-2 py-0.5 rounded-full border border-emerald-500/30 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Verified Deployment</span>
-              </span>
-            </div>
-
-            {/* Top Right Quick Launch Indicator */}
-            <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="text-[8.5px] font-mono text-cyan-300 bg-black/85 backdrop-blur-md px-2 py-0.5 rounded-md border border-cyan-500/30 flex items-center space-x-1">
-                <span>Open Live</span>
-                <ArrowUpRight className="w-2.5 h-2.5" />
+            {/* Subtle Gradient Shadow & Scroll Hint at Bottom */}
+            <div className="sticky bottom-0 inset-x-0 h-5 bg-gradient-to-t from-[#001015] via-[#001015]/80 to-transparent pointer-events-none flex items-end justify-center pb-0.5">
+              <span className="text-[7.5px] font-mono text-cyan-400/80 bg-black/70 px-2 py-0.2 rounded-full border border-cyan-500/20 backdrop-blur-xs">
+                scroll to explore &darr;
               </span>
             </div>
           </div>
@@ -111,14 +132,17 @@ export default function ProductCard({
 
         {/* Compact, Highly Disciplined Card Content */}
         <div className="p-4 sm:p-5">
-          {/* Category Pill */}
+          {/* Category Pill & Live Status */}
           <div className="flex items-center justify-between gap-2 mb-2">
             <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-semibold uppercase tracking-wider">
               {product.category}
             </span>
-            <span className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] font-mono">
-              Production
-            </span>
+            {product.demoUrl && (
+              <span className="inline-flex items-center space-x-1 text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Live Host</span>
+              </span>
+            )}
           </div>
 
           {/* Product Name */}

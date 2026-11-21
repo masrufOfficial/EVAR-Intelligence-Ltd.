@@ -111,6 +111,22 @@ textarea {
   background: rgba(148, 163, 184, 0.5);
 }
 
+/* Slim scrollbar for embedded preview viewport */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.4);
+  border-radius: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.75);
+}
+
 /* ════════════════════════════════════════
    CINEMATIC GLASSMORPHIC PANELS
    ════════════════════════════════════════ */
