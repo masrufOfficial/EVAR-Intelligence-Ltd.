@@ -4,7 +4,6 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { ExternalLink, Globe, ArrowUpRight, ChevronsUpDown } from 'lucide-react';
 import { ProductItem } from './product-modal';
-import ProductPreviewViewport from './product-preview-viewport';
 
 function cleanDomain(url?: string | null) {
   if (!url) return '';
@@ -26,6 +25,10 @@ export default function ProductCard({
   const targetUrl = product.demoUrl || `/products/${product.slug}`;
   const isExternal = Boolean(product.demoUrl);
   const domain = cleanDomain(product.demoUrl);
+
+  // Dainik Bichitra Bangla returns 404 on its vercel domain, so show screenshot for it
+  const hasLivePreview =
+    Boolean(product.demoUrl) && product.slug !== 'dainik-bichitra-bangla-newsportal';
 
   const isDraggingRef = useRef(false);
   const startPosRef = useRef({ x: 0, y: 0 });
@@ -69,8 +72,8 @@ export default function ProductCard({
       className="dark-panel overflow-hidden cursor-pointer group flex flex-col justify-between hover:border-cyan-500/40 hover:shadow-[0_12px_32px_rgba(0,180,216,0.12)] transition-all duration-300 rounded-2xl"
     >
       <div>
-        {/* Sleek macOS Browser Header & Scrollable Preview Frame */}
-        <div className="relative w-full h-48 sm:h-52 md:h-56 bg-[#001015] border-b border-[#00212b]/10 dark:border-white/10 flex flex-col overflow-hidden">
+        {/* Sleek macOS Browser Header & Live Preview Frame */}
+        <div className="relative w-full h-52 sm:h-56 md:h-60 bg-[#001015] border-b border-[#00212b]/10 dark:border-white/10 flex flex-col overflow-hidden">
           {/* Top Browser Bar */}
           <div className="h-7 bg-[#00171f] border-b border-white/5 flex items-center justify-between px-3 text-[10px] text-[#64748b] dark:text-[#94a3b8] font-mono select-none shrink-0 z-20">
             {/* Window Controls */}
@@ -92,7 +95,7 @@ export default function ProductCard({
             <div className="flex items-center space-x-1.5">
               <span className="hidden sm:inline-flex items-center space-x-0.5 text-[8.5px] font-mono text-cyan-300 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20">
                 <ChevronsUpDown className="w-2.5 h-2.5 text-cyan-400" />
-                <span>Scroll</span>
+                <span>Live Web</span>
               </span>
               <a
                 href={targetUrl}
@@ -107,26 +110,28 @@ export default function ProductCard({
             </div>
           </div>
 
-          {/* Scrollable Preview Viewport (Touch & Wheel scrollable) */}
-          <div
-            className="relative flex-1 w-full overflow-y-auto overflow-x-hidden overscroll-contain select-none scrollbar-thin scrollbar-thumb-cyan-500/30 hover:scrollbar-thumb-cyan-400/60 scrollbar-track-transparent bg-[#001015]"
-            style={{
-              WebkitOverflowScrolling: 'touch',
-              touchAction: 'pan-y',
-            }}
-          >
-            <ProductPreviewViewport
-              slug={product.slug}
-              name={product.name}
-              demoUrl={product.demoUrl}
+          {/* Real Live Scrollable Webpage Viewport */}
+          <div className="relative flex-1 w-full h-full bg-[#001015] overflow-hidden">
+            {/* Real Screenshot Placeholder underlay */}
+            <Image
+              src={product.heroMedia}
+              alt={`${product.name} Preview`}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover object-top opacity-60"
+              priority={product.isFeatured}
             />
 
-            {/* Subtle Gradient Shadow & Scroll Hint at Bottom */}
-            <div className="sticky bottom-0 inset-x-0 h-5 bg-gradient-to-t from-[#001015] via-[#001015]/80 to-transparent pointer-events-none flex items-end justify-center pb-0.5">
-              <span className="text-[7.5px] font-mono text-cyan-400/80 bg-black/70 px-2 py-0.2 rounded-full border border-cyan-500/20 backdrop-blur-xs">
-                scroll to explore &darr;
-              </span>
-            </div>
+            {/* Live Webpage iframe with stripped hydration scripts */}
+            {hasLivePreview && (
+              <iframe
+                src={`/api/preview-proxy?url=${encodeURIComponent(product.demoUrl!)}`}
+                title={`${product.name} Live Webpage`}
+                className="relative z-10 w-full h-full border-0 bg-transparent pointer-events-auto"
+                loading="lazy"
+                scrolling="yes"
+              />
+            )}
           </div>
         </div>
 

@@ -58,17 +58,31 @@ export async function GET(req: NextRequest) {
     const origin = parsedUrl.origin;
     const baseTag = `<base href="${origin}/" target="_blank">`;
 
-    // Inject base tag and styling to optimize preview scale and prevent scroll locking
+    // Rewrite relative Next.js asset paths to target origin to ensure images and stylesheets load cleanly
+    html = html.replace(/(src|href|srcset)=["'](\/_next\/[^"']+)["']/gi, (match, attr, path) => {
+      return `${attr}="${origin}${path}"`;
+    });
+
+    // Strip frame-busting scripts if any exist
+    html = html.replace(/if\s*\(\s*top\s*!==\s*self\s*\)[^}]+}/gi, '');
+    html = html.replace(/if\s*\(\s*window\.top\s*!==\s*window\.self\s*\)[^}]+}/gi, '');
+
+    // Strip client-side JavaScript script tags so modern Next.js/React hydration never crashes cross-origin
+    html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+
+    // Inject base tag and styling to optimize preview scale and enable smooth scrolling
     const injectedHead = `
       ${baseTag}
       <style>
         /* Smooth preview rendering */
-        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-thumb { background: rgba(0, 180, 216, 0.4); border-radius: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
         html, body {
           overflow-y: auto !important;
           max-width: 100vw !important;
+          touch-action: pan-y !important;
+          -webkit-overflow-scrolling: touch !important;
         }
       </style>
     `;
@@ -80,10 +94,6 @@ export async function GET(req: NextRequest) {
     } else {
       html = `<head>${injectedHead}</head>${html}`;
     }
-
-    // Strip frame-busting scripts if any exist
-    html = html.replace(/if\s*\(\s*top\s*!==\s*self\s*\)[^}]+}/gi, '');
-    html = html.replace(/if\s*\(\s*window\.top\s*!==\s*window\.self\s*\)[^}]+}/gi, '');
 
     return new NextResponse(html, {
       status: 200,
