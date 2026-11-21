@@ -7,7 +7,6 @@ import PillarAwareness from '@/components/pillar-awareness';
 import ProductGrid from '@/components/product-grid';
 import PillarAutomation from '@/components/pillar-automation';
 import ResearchShowcase from '@/components/research-showcase';
-import FoundersSection from '@/components/founders-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
 import { prisma } from '@/lib/prisma';
@@ -82,10 +81,9 @@ export default async function HomePage() {
       <SpecialtiesSection />
       <SafetySection />
       <PillarAwareness programs={awarenessPrograms.length > 0 ? awarenessPrograms : undefined} />
-      <ProductGrid products={products} />
+      <ProductGrid products={products} isLandingPage={true} maxDisplay={6} />
       <PillarAutomation workflows={automationWorkflows.length > 0 ? automationWorkflows : undefined} />
       <ResearchShowcase papers={researchPapers.length > 0 ? researchPapers : undefined} />
-      <FoundersSection />
       <ContactSection />
       <Footer />
     </div>

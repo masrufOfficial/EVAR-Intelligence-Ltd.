@@ -21,6 +21,7 @@ export interface ProductItem {
   status?: string;
   isFeatured?: boolean;
   ctaText?: string;
+  demoUrl?: string | null;
 }
 
 export default function ProductModal({
@@ -62,7 +63,7 @@ export default function ProductModal({
         </p>
 
         {/* Hero Media Preview */}
-        <div className="relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden mb-8 border border-[#00212b]/10 dark:border-white/[0.08]">
+        <div className="relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden mb-6 border border-[#00212b]/10 dark:border-white/[0.08]">
           <Image
             src={product.heroMedia}
             alt={product.name}
@@ -70,6 +71,30 @@ export default function ProductModal({
             className="object-cover opacity-90"
           />
         </div>
+
+        {/* System Screenshots Gallery */}
+        {product.gallery && product.gallery.length > 0 && (
+          <div className="mb-8">
+            <h4 className="text-[10px] uppercase font-mono tracking-wider text-[#64748b] dark:text-[#8b8a8a] mb-3 font-semibold">
+              System Screenshots &amp; Verified Interface Views
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {product.gallery.map((imgUrl, i) => (
+                <div
+                  key={i}
+                  className="relative h-36 rounded-xl overflow-hidden border border-[#00212b]/10 dark:border-white/[0.08] group bg-black/40"
+                >
+                  <Image
+                    src={imgUrl}
+                    alt={`${product.name} Screenshot ${i + 1}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Problem vs Solution Matrix */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -135,13 +160,25 @@ export default function ProductModal({
 
         {/* Action CTA */}
         <div className="pt-6 border-t border-[#00212b]/10 dark:border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <Link
-            href={`/products/${product.slug}`}
-            className="text-xs text-cyan-600 dark:text-cyan-400 hover:underline flex items-center space-x-1 font-semibold"
-          >
-            <span>View Dedicated Page</span>
-            <ExternalLink className="w-3.5 h-3.5 ml-1" />
-          </Link>
+          <div className="flex items-center space-x-4">
+            {product.demoUrl && (
+              <a
+                href={product.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-cyan-600 dark:text-cyan-400 hover:underline flex items-center space-x-1 font-semibold"
+              >
+                <span>Launch Hosted Website</span>
+                <ExternalLink className="w-3.5 h-3.5 ml-1" />
+              </a>
+            )}
+            <Link
+              href={`/products/${product.slug}`}
+              className="text-xs text-[#64748b] dark:text-[#94a3b8] hover:underline flex items-center space-x-1"
+            >
+              <span>Architecture Specs</span>
+            </Link>
+          </div>
           <div className="flex items-center space-x-3 w-full sm:w-auto">
             <button
               onClick={onClose}

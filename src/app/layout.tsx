@@ -60,8 +60,15 @@ export default function RootLayout({
       'An innovation hub for human protection in the age of AI. Specialties in AI Safety, AI Awareness, Intelligent Software, AI Product Development, and AI Automation.',
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'contact@evarintelligence.com',
+      email: 'mmrhridoy99@gmail.com',
+      telephone: '+8801827459921',
       contactType: 'Customer Support',
+      areaServed: 'Global',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Dhaka',
+      addressCountry: 'Bangladesh',
     },
   };
 

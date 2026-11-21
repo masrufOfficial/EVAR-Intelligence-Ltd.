@@ -20,7 +20,20 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/api/preview-proxy',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self'",
+          },
+        ],
+      },
+      {
+        source: '/((?!api/preview-proxy).*)',
         headers: [
           {
             key: 'X-DNS-Prefetch-Control',
@@ -28,7 +41,7 @@ const nextConfig = {
           },
           {
             key: 'X-Frame-Options',
-            value: 'DENY',
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-Content-Type-Options',
@@ -46,13 +59,14 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline'", // required for Next.js hydration & dynamic three.js canvas
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com data:",
-              "img-src 'self' data: blob: https://images.unsplash.com https://assets.aceternity.com",
-              "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
-              "media-src 'self' https://d8j0ntlcm91z4.cloudfront.net blob: data:",
-              "frame-ancestors 'none'",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https:", // required for Next.js hydration & dynamic three.js canvas
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https:",
+              "font-src 'self' https://fonts.gstatic.com data: https:",
+              "img-src 'self' data: blob: https: https://images.unsplash.com https://assets.aceternity.com",
+              "connect-src 'self' https: https://fonts.googleapis.com https://fonts.gstatic.com https://generativelanguage.googleapis.com",
+              "media-src 'self' https://d8j0ntlcm91z4.cloudfront.net blob: data: https:",
+              "frame-src 'self' https: data: blob:",
+              "frame-ancestors 'self'",
               "base-uri 'self'",
               "form-action 'self'",
             ].join('; '),

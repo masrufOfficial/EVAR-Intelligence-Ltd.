@@ -29,6 +29,24 @@ export default function Footer() {
               for a safer tomorrow across AI Safety, AI Awareness, Intelligent Software, AI Product
               Development, and AI Automation.
             </p>
+            <div className="pt-2 space-y-1 text-xs text-[#94a3b8]">
+              <div>
+                <span className="text-[#64748b] font-mono text-[10px] uppercase">Location:</span>{' '}
+                <span className="text-white font-medium">Dhaka, Bangladesh</span>
+              </div>
+              <div>
+                <span className="text-[#64748b] font-mono text-[10px] uppercase">Email:</span>{' '}
+                <a href="mailto:mmrhridoy99@gmail.com" className="text-cyan-400 hover:underline">
+                  mmrhridoy99@gmail.com
+                </a>
+              </div>
+              <div>
+                <span className="text-[#64748b] font-mono text-[10px] uppercase">Phone:</span>{' '}
+                <a href="tel:+8801827459921" className="text-cyan-400 hover:underline">
+                  +8801827459921
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Specialties 01 & 02 */}
@@ -63,7 +81,8 @@ export default function Footer() {
               Innovation Hub
             </h4>
             <ul className="space-y-2.5 text-[#94a3b8]">
-              <li><Link href="/research" className="hover:text-cyan-400 transition-colors">Research Labs</Link></li>
+              <li><Link href="/research" className="hover:text-cyan-400 transition-colors">Research Labs (R&amp;D)</Link></li>
+              <li><Link href="/leadership" className="hover:text-cyan-400 transition-colors">Our Leaders &amp; Team</Link></li>
               <li><Link href="/about" className="hover:text-cyan-400 transition-colors">About EVAR</Link></li>
               <li><Link href="/contact" className="hover:text-cyan-400 transition-colors">Inquiries &amp; Partnerships</Link></li>
               <li>

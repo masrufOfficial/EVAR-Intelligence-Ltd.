@@ -29,9 +29,9 @@ const safetyPrinciples = [
 
 export default function SafetySection() {
   return (
-    <section id="ai-safety" className="py-24 sm:py-28 relative bg-transparent border-t border-[#00212b]/10 dark:border-white/[0.08]">
+    <section id="ai-safety" className="py-12 sm:py-16 relative bg-transparent border-t border-[#00212b]/10 dark:border-white/[0.08]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <div className="badge-pill mb-4 text-cyan-600 dark:text-cyan-400">
             Specialty 01 &bull; AI Safety
           </div>
@@ -46,7 +46,7 @@ export default function SafetySection() {
         </div>
 
         {/* 4 Core Safety Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {safetyPrinciples.map((item, idx) => (
             <div
               key={idx}

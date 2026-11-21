@@ -37,6 +37,7 @@ export default async function ProductDetailPage({
 
   const features: string[] = JSON.parse(product.features || '[]');
   const technology: string[] = JSON.parse(product.technology || '[]');
+  const gallery: string[] = JSON.parse(product.gallery || '[]');
 
   return (
     <div className="min-h-screen bg-[var(--stage-bg)] text-[var(--ink)] flex flex-col">
@@ -99,6 +100,30 @@ export default async function ProductDetailPage({
           </div>
         </div>
 
+        {/* Screenshots & Interface Gallery */}
+        {gallery.length > 0 && (
+          <div className="mb-12">
+            <h2 className="text-lg font-normal text-[#fafafa] mb-4">
+              System Screenshots &amp; Interface Gallery
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {gallery.map((imgUrl, idx) => (
+                <div
+                  key={idx}
+                  className="relative h-48 rounded-xl overflow-hidden border border-white/[0.08] bg-black/40 group"
+                >
+                  <Image
+                    src={imgUrl}
+                    alt={`${product.name} Screenshot ${idx + 1}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Full Architectural Description */}
         <div className="dark-panel p-8 mb-12 space-y-3">
           <h2 className="text-lg font-normal text-[#fafafa]">Architecture &amp; Design Overview</h2>
@@ -148,13 +173,26 @@ export default async function ProductDetailPage({
               Contact our engineering team for deployment specifications or a live proof-of-concept.
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="pill-btn !py-2.5 !px-6 !text-xs shrink-0 font-semibold"
-          >
-            <span>{product.ctaText || 'Request Access'}</span>
-            <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-          </Link>
+          <div className="flex items-center space-x-3 shrink-0">
+            {product.demoUrl && (
+              <a
+                href={product.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ghost-btn !py-2.5 !px-5 !text-xs font-semibold inline-flex items-center space-x-1.5"
+              >
+                <span>Launch Live App</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            )}
+            <Link
+              href="/contact"
+              className="pill-btn !py-2.5 !px-6 !text-xs shrink-0 font-semibold"
+            >
+              <span>{product.ctaText || 'Request Access'}</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+            </Link>
+          </div>
         </div>
       </div>
 

@@ -68,7 +68,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-28 relative bg-transparent border-t border-[#00212b]/10 dark:border-white/[0.08]">
+    <section id="contact" className="py-12 sm:py-16 relative bg-transparent border-t border-[#00212b]/10 dark:border-white/[0.08]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column */}
@@ -88,18 +88,28 @@ export default function ContactSection() {
 
             <div className="space-y-4 pt-4 border-t border-[#00212b]/10 dark:border-white/[0.06]">
               <div className="text-xs text-[#475569] dark:text-[#a7a6a6]">
-                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Direct Inquiries</div>
-                <div className="text-[#00212b] dark:text-[#fafafa] font-medium">contact@evarintelligence.com</div>
+                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Direct Inquiries &amp; Email</div>
+                <a
+                  href="mailto:mmrhridoy99@gmail.com"
+                  className="text-[#00212b] dark:text-[#fafafa] font-medium hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+                >
+                  mmrhridoy99@gmail.com
+                </a>
               </div>
 
               <div className="text-xs text-[#475569] dark:text-[#a7a6a6]">
-                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">AI Safety &amp; Research Labs</div>
-                <div className="text-[#00212b] dark:text-[#fafafa] font-medium">safety@evarintelligence.com</div>
+                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Phone &amp; Direct Line</div>
+                <a
+                  href="tel:+8801827459921"
+                  className="text-[#00212b] dark:text-[#fafafa] font-medium hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+                >
+                  01827459921 / +8801827459921
+                </a>
               </div>
 
               <div className="text-xs text-[#475569] dark:text-[#a7a6a6]">
-                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Headquarters</div>
-                <div className="text-[#00212b] dark:text-[#fafafa] font-medium">EVAR Intelligence Ltd., Innovation District</div>
+                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Headquarters &amp; Location</div>
+                <div className="text-[#00212b] dark:text-[#fafafa] font-medium">EVAR Intelligence Ltd., Dhaka, Bangladesh</div>
               </div>
             </div>
 
