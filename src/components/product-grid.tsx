@@ -51,19 +51,19 @@ export default function ProductGrid({
   return (
     <section
       id="products"
-      className="py-12 sm:py-16 relative bg-transparent border-t border-[#00212b]/10 dark:border-white/[0.08]"
+      className="py-8 sm:py-14 relative bg-transparent border-t border-[#00212b]/10 dark:border-white/[0.08]"
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="max-w-2xl">
-            <div className="badge-pill mb-4 text-fuchsia-600 dark:text-fuchsia-400">
+            <div className="badge-pill mb-3 text-fuchsia-600 dark:text-fuchsia-400">
               Specialties 03 &amp; 04 &bull; Software &amp; Products
             </div>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-light text-[#00212b] dark:text-[#fafafa] tracking-tight leading-[1.12]">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-[#00212b] dark:text-[#fafafa] tracking-tight leading-[1.15]">
               {title}
             </h2>
-            <p className="mt-3.5 sm:mt-4 text-sm sm:text-base md:text-lg text-[#475569] dark:text-[#a7a6a6] leading-relaxed">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-base text-[#475569] dark:text-[#a7a6a6] leading-relaxed">
               {subtitle}
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function ProductGrid({
                 placeholder="Search solutions & tech..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white/70 dark:bg-white/[0.04] border border-[#00212b]/15 dark:border-white/[0.1] text-xs text-[#00212b] dark:text-[#fafafa] placeholder-[#64748b] dark:placeholder-[#8b8a8a] focus:outline-none focus:border-cyan-500 transition-colors shadow-sm"
+                className="w-full pl-10 pr-4 py-2 sm:py-2.5 rounded-full bg-white/70 dark:bg-white/[0.04] border border-[#00212b]/15 dark:border-white/[0.1] text-xs text-[#00212b] dark:text-[#fafafa] placeholder-[#64748b] dark:placeholder-[#8b8a8a] focus:outline-none focus:border-cyan-500 transition-colors shadow-sm"
               />
             </div>
           )}
@@ -85,14 +85,14 @@ export default function ProductGrid({
 
         {/* Category Pills on Full Products Page */}
         {!isLandingPage && (
-          <div className="flex overflow-x-auto pb-4 mb-8 gap-2 no-scrollbar">
+          <div className="flex overflow-x-auto pb-3 mb-6 gap-2 no-scrollbar">
             {categories.map((cat) => {
               const isSelected = selectedCategory === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`text-xs px-4 py-2 rounded-full whitespace-nowrap transition-all duration-200 ${
+                  className={`text-[11px] sm:text-xs px-3.5 py-1.5 sm:py-2 rounded-full whitespace-nowrap transition-all duration-200 ${
                     isSelected
                       ? 'bg-[#00212b] dark:bg-white text-white dark:text-[#00212b] font-semibold shadow-md'
                       : 'bg-white/60 dark:bg-white/[0.03] text-[#475569] dark:text-[#a7a6a6] border border-[#00212b]/10 dark:border-white/[0.06] hover:bg-white dark:hover:bg-white/[0.08] hover:text-[#00212b] dark:hover:text-white'
@@ -107,7 +107,7 @@ export default function ProductGrid({
 
         {/* Products Grid: Exactly 3 cards in a row */}
         {displayedList.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {displayedList.map((p) => (
               <ProductCard
                 key={p.id}
