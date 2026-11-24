@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'Responsible AI',
   ],
   authors: [
-    { name: 'EVAR Intelligence Ltd.', url: 'https://evarintelligence.com' },
+    { name: 'EVAR Intelligence Ltd.', url: 'https://www.evarintelligenceltd.com/' },
     { name: 'Masruf Rahman', url: 'https://www.masrufrahman.info/' },
   ],
   creator: 'Masruf Rahman',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'EVAR Intelligence Ltd. | An Innovation Hub for Human Protection in the Age of AI',
     description:
       'We research and develop approaches for safer, more reliable, responsible, and human-centered AI, intelligent software, and enterprise automation.',
-    url: 'https://evarintelligence.com',
+    url: 'https://www.evarintelligenceltd.com/',
     siteName: 'EVAR Intelligence Ltd.',
     images: [
       {
@@ -54,13 +54,13 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'EVAR Intelligence Ltd.',
-    url: 'https://evarintelligence.com',
-    logo: 'https://evarintelligence.com/images/evar-logo-dark.png',
+    url: 'https://www.evarintelligenceltd.com/',
+    logo: 'https://www.evarintelligenceltd.com/images/evar-logo-dark.png',
     description:
       'An innovation hub for human protection in the age of AI. Specialties in AI Safety, AI Awareness, Intelligent Software, AI Product Development, and AI Automation.',
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'mmrhridoy99@gmail.com',
+      email: 'evarintelligenceltd@gmail.com',
       telephone: '+8801827459921',
       contactType: 'Customer Support',
       areaServed: 'Global',
@@ -70,6 +70,10 @@ export default function RootLayout({
       addressLocality: 'Dhaka',
       addressCountry: 'Bangladesh',
     },
+    sameAs: [
+      'https://www.facebook.com/evarinlelligenceltd',
+      'https://www.linkedin.com/company/evar-intelligence-ltd',
+    ],
   };
 
   return (

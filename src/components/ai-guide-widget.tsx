@@ -93,7 +93,7 @@ export default function AiGuideWidget() {
         id: `assistant-err-${Date.now()}`,
         role: 'assistant',
         content:
-          "I'm here to help! EVAR Intelligence specializes in **AI Safety**, **AI Awareness**, **Intelligent Software**, **AI Product Development**, and **AI Automation**. Feel free to ask about any of these, or contact our team directly at [mmrhridoy99@gmail.com](mailto:mmrhridoy99@gmail.com) / +8801827459921 (Dhaka, Bangladesh).",
+          "I'm here to help! EVAR Intelligence specializes in **AI Safety**, **AI Awareness**, **Intelligent Software**, **AI Product Development**, and **AI Automation**. Feel free to ask about our 6 active products, services, or contact our team directly at [evarintelligenceltd@gmail.com](mailto:evarintelligenceltd@gmail.com) / +8801827459921 (Dhaka, Bangladesh).",
       };
       setMessages((prev) => [...prev, fallbackMsg]);
     } finally {

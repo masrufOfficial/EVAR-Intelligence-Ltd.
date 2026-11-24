@@ -49,7 +49,7 @@ interface Researcher {
   }[];
 }
 
-// 1. Shisir, 2. Masruf, 3. Mim, 4. Faisal
+// 1. Shisir, 2. Masruf, 3. Mim, 4. Foysal
 const researchers: Researcher[] = [
   {
     id: 'shisir',
@@ -146,33 +146,33 @@ const researchers: Researcher[] = [
     ],
   },
   {
-    id: 'faisal',
-    name: 'Faisal Ahmed',
+    id: 'foysal',
+    name: 'Foysal Ahmed',
     image: '/images/team/faisal.png',
-    specialization: 'Global AI Ecosystems & Technology Transfer',
+    specialization: 'Technology Business Development & Global Tech Transfer',
     profile:
-      'Researches international AI safety ecosystems, cross-jurisdictional compliance architectures, and global technology diffusion pathways. Explores macroeconomic models for AI alignment adoption and strategic cross-border technology alliances across sovereign jurisdictions.',
+      'Leads technology business development, cross-jurisdictional tech transfer frameworks, and enterprise partnership ecosystems. Specializes in scaling AI systems, commercial technology diffusion, and strategic alliances.',
     works: [
       {
-        title: 'Global AI Safety Ecosystem & Policy Benchmarks',
-        description: 'Cross-jurisdictional comparative framework mapping EU AI Act, ISO/IEC 42001, and NIST AI RMF to production systems.',
+        title: 'Technology Business Development & Commercialization',
+        description: 'Strategic frameworks mapping enterprise requirements to EVAR software, AI platforms, and technical SLAs.',
       },
       {
         title: 'Cross-Border AI Technology Transfer Framework',
-        description: 'Operational protocols for licensing proprietary safety and verification technologies into sovereign cloud environments.',
+        description: 'Operational protocols for licensing proprietary safety and verification technologies into sovereign enterprise environments.',
       },
       {
         title: 'Research-to-Market Technology Diffusion Protocol',
         description: 'Systematic methodology aligning academic mathematical safety theorems with real-world enterprise operational SLAs.',
       },
       {
-        title: 'International AI Safety & Red-Teaming Consortium',
-        description: 'Multi-regional technical advisory network coordinating ethical AI safety standards and institutional partnerships.',
+        title: 'Strategic Industry Alliances & Enterprise Integration',
+        description: 'Coordinating high-impact commercial partnerships, tech integrations, and enterprise deployment roadmaps.',
       },
     ],
     links: [
-      { name: 'LinkedIn', href: 'https://www.linkedin.com', icon: Linkedin },
-      { name: 'Contact', href: '/contact', icon: Mail },
+      { name: 'LinkedIn', href: 'https://www.linkedin.com/company/evar-intelligence-ltd', icon: Linkedin },
+      { name: 'Contact', href: 'mailto:send.fahmed@gmail.com', icon: Mail },
     ],
   },
 ];

@@ -8,28 +8,36 @@ Tagline: "An innovation hub for human protection in the age of AI."
 
 STRICT CORE PRINCIPLES:
 1. NATURAL HUMAN CONVERSATION: Speak in a natural, friendly, and authentic tone like a helpful colleague. If the user asks "how are you?", answer politely and warmly!
-2. COMPLETE & CONCISE ANSWERS: Always finish your sentences completely. Keep answers to 2 to 3 natural sentences (under 75 words).
+2. COMPLETE & CONCISE ANSWERS: Always finish your sentences completely. Keep answers to 2 to 3 natural sentences (under 80 words).
 3. NO INTERNAL THOUGHTS OR OUTLINES: Never output thinking tags, brainstorming notes, or lists of options. Output ONLY your direct conversational message to the user.
-4. EVAR'S 5 CORE SPECIALTIES:
-   - AI Safety: Safer, reliable, human-centered AI with mathematical alignment & ISO 42001 guardrails.
-   - AI Awareness: Global public campaigns, industry advocacy initiatives, and community outreach drives.
-   - Intelligent Software: Cloud-native architectures embedded with cognitive AI capabilities.
-   - AI Product Development: Practical enterprise software and AI platforms solving real problems.
-   - AI Automation: Multi-agent systems automating complex workflows with deterministic human oversight.
-5. FOUNDERS & LEADERSHIP:
+4. EVAR'S 5 CORE SPECIALTIES & SERVICES:
+   - AI Safety: Safer, reliable, human-centered AI with mathematical alignment, deterministic guardrails & ISO 42001 compliance.
+   - AI Awareness: Global public campaigns, industry advocacy initiatives, and executive/workforce AI literacy training.
+   - Intelligent Software: Cloud-native architectures embedded with cognitive AI capabilities, custom CRMs, and APIs.
+   - AI Product Development: Practical enterprise software and AI platforms solving real problems from idea to deployment.
+   - AI Automation: Multi-agent systems automating complex enterprise workflows with deterministic human oversight.
+5. FOUNDERS & EXECUTIVE LEADERSHIP:
    - Masruf Rahman: Founder, CEO & CTO (leads research, AI safety & architectures). Personal site: https://www.masrufrahman.info
    - Mahbuba Islam Mim: Founder, COO & HR (leads operations, organizational development & community).
    - Emdadul Hasan Shishir: Lead Developer & R&D Engineer.
-   - Faisal Ahmed: Director of International Business Development.
+   - Foysal Ahmed: Technology Business Development Lead (leads tech commercialization, enterprise alliances & partnerships. Direct contact: send.fahmed@gmail.com).
    - Shamsuzzaman Sumon: Director of Product Operations.
 6. EVAR'S 6 FLAGSHIP PRODUCTS & DEPLOYMENTS (Never mention GitHub repo links):
    1. BUBT TAFE [Website & CRM]: Vocational training portal, bilingual student admission engine, tamper-proof QR certificate verification (/verify), and 11-module enterprise CRM. Hosted live at: https://bubttafe.duckdns.org/
    2. Perfume E-commerce website (AROMA & AESTHETIC): Luxury Haute Parfumerie decants and curated living platform with specialized decant volume tracking, pipette loss calibration, and nationwide COD logistics. Hosted live at: https://aromaaesthetic.vercel.app/
    3. IELTS Mock Test Platform: Authentic British Council-style computer-delivered IELTS simulation (CD-IELTS) with live audio sync, split-screen reading, automated band scoring, and wireless smartphone QR microphone pairing. Hosted live at: https://bubttafe.duckdns.org/ielts-portal
    4. Dainik Bichitra Bangla Newsportal: Modern digital newspaper featuring a 3D floating AI companion ("বিচিত্রা এআই") with Bengali/English/Banglish NLP, admin AI newsroom copilot, and asymmetric editorial layout. Hosted live at: https://dainik-bichitra-bangla.vercel.app/
-   5. Evar Intelligence Limited [Software Company]: Enterprise human protection platform with deterministic tool-gating guardrails, zero-trust model sandbox, and multi-agent workflow pipelines. Hosted live at: https://evarintelligenceltd.vercel.app/
+   5. Evar Intelligence Limited [Software Company]: Enterprise human protection platform with deterministic tool-gating guardrails, zero-trust model sandbox, and multi-agent workflow pipelines. Hosted live at: https://www.evarintelligenceltd.com/
    6. Masruf Protfolio: Forward Deployed Engineer portfolio featuring an interactive 3D spatial VR hero, real-time JARVIS neural assistant powered by Google Gemini, and IEEE QPAIN 2025 research papers. Hosted live at: https://www.masrufrahman.info
-7. STRICT RULE: Never mention "shift-left security" or any GitHub repository links. Focus on these 6 verified products, leadership, and the 5 core specialties.
+7. OFFICIAL CONTACT & SOCIAL CHANNELS:
+   - Official Website: https://www.evarintelligenceltd.com/
+   - Corporate Email: evarintelligenceltd@gmail.com
+   - Direct Business Lead: Foysal Ahmed (send.fahmed@gmail.com)
+   - Phone / Direct Contact: 01827459921 / +8801827459921
+   - Location: Dhaka, Bangladesh
+   - Facebook: https://www.facebook.com/evarinlelligenceltd
+   - LinkedIn: https://www.linkedin.com/company/evar-intelligence-ltd
+8. STRICT RULE: Never mention "shift-left security" or any GitHub repository links. Focus on our 6 verified products, services, leadership, and core specialties.
 `.trim();
 
 // Natural, complete knowledge counselor for immediate, graceful zero-downtime responses
@@ -59,7 +67,7 @@ function getCounselorResponse(userQuery: string): string {
 
   // EVAR Intelligence Platform
   if (q.includes('evar platform') || q.includes('evar intelligence limited') || (q.includes('evar') && q.includes('software'))) {
-    return 'The EVAR Intelligence Platform is our flagship human protection suite engineered with deterministic tool-gating guardrails, zero-trust sandboxes, and multi-agent coordination pipelines. Explore it directly at [EVAR Intelligence](https://evarintelligenceltd.vercel.app/).';
+    return 'The EVAR Intelligence Platform is our flagship human protection suite engineered with deterministic tool-gating guardrails, zero-trust sandboxes, and multi-agent coordination pipelines. Explore it directly at [EVAR Intelligence](https://www.evarintelligenceltd.com/).';
   }
 
   // Masruf Portfolio
@@ -82,20 +90,30 @@ function getCounselorResponse(userQuery: string): string {
     return 'Mahbuba Islam Mim is the Founder, COO & HR of EVAR Intelligence Ltd. She oversees our business operations, organizational strategy, and community AI programs.';
   }
 
-  // 4. Leadership / Team
+  // 4. Foysal Ahmed
+  if (
+    q.includes('foysal') ||
+    q.includes('faisal') ||
+    q.includes('fahmed') ||
+    q.includes('business development') ||
+    q.includes('bd lead')
+  ) {
+    return 'Foysal Ahmed is our Technology Business Development Lead at EVAR Intelligence Ltd. He oversees strategic industry partnerships, enterprise alliances, and commercialization. You can reach him directly at [send.fahmed@gmail.com](mailto:send.fahmed@gmail.com).';
+  }
+
+  // 5. Leadership / Team
   if (
     q.includes('founder') ||
     q.includes('leadership') ||
     q.includes('who runs') ||
     q.includes('team') ||
     q.includes('shishir') ||
-    q.includes('faisal') ||
     q.includes('sumon')
   ) {
-    return 'EVAR Intelligence is led by Founders Masruf Rahman (CEO & CTO) and Mahbuba Islam Mim (COO & HR), alongside Emdadul Hasan Shishir (Lead Developer), Faisal Ahmed (Director of International Business Development), and Shamsuzzaman Sumon (Director of Product Operations). Learn more in our [Leadership section](/leadership).';
+    return 'EVAR Intelligence is led by Founders Masruf Rahman (CEO & CTO) and Mahbuba Islam Mim (COO & HR), alongside Emdadul Hasan Shishir (Lead Developer), Foysal Ahmed (Technology Business Development Lead), and Shamsuzzaman Sumon (Director of Product Operations). Learn more in our [Leadership section](/leadership).';
   }
 
-  // 5. AI Safety
+  // 6. AI Safety
   if (
     q.includes('safety') ||
     q.includes('risk') ||
@@ -106,7 +124,7 @@ function getCounselorResponse(userQuery: string): string {
     return 'Our AI Safety research develops mathematical alignment guarantees and deterministic guardrails so models remain bounded and human-centered. You can learn more in our [AI Safety section](/#ai-safety).';
   }
 
-  // 6. AI Awareness
+  // 7. AI Awareness
   if (
     q.includes('aware') ||
     q.includes('campaign') ||
@@ -118,19 +136,20 @@ function getCounselorResponse(userQuery: string): string {
     return 'Our AI Awareness specialty promotes human protection through global campaigns, industry advocacy initiatives, and community outreach drives. Explore our active initiatives in the [AI Awareness section](/#ai-awareness).';
   }
 
-  // 7. Intelligent Software
+  // 8. Intelligent Software & Custom Engineering
   if (
     q.includes('software') ||
     q.includes('engineer') ||
     q.includes('cloud') ||
     q.includes('stack') ||
     q.includes('develop') ||
-    q.includes('code')
+    q.includes('code') ||
+    q.includes('custom app')
   ) {
     return 'We engineer Intelligent Software by integrating cognitive AI layers into resilient, cloud-native microservices like the BUBT TAFE ecosystem and IELTS Mock Test Platform. Discover our software capabilities in our [Products section](/products).';
   }
 
-  // 8. AI Automation
+  // 9. AI Automation & Agents
   if (
     q.includes('automat') ||
     q.includes('agent') ||
@@ -141,7 +160,7 @@ function getCounselorResponse(userQuery: string): string {
     return 'Our AI Automation deploys multi-agent systems with deterministic guardrails to streamline complex business workflows. Learn how it accelerates operations in our [AI Automation section](/#ai-automation).';
   }
 
-  // 9. Research / Publications
+  // 10. Research / Publications
   if (
     q.includes('research') ||
     q.includes('paper') ||
@@ -152,7 +171,7 @@ function getCounselorResponse(userQuery: string): string {
     return 'Our research team publishes peer-reviewed papers on adversarial robustness, passive deepfake defenses, and Explainable AI intrusion detection (IEEE QPAIN 2025). Explore all publications in our [R&D section](/research).';
   }
 
-  // 10. Contact / Collaboration / Pricing / Hire
+  // 11. Contact / Collaboration / Pricing / Hire
   if (
     q.includes('contact') ||
     q.includes('hire') ||
@@ -162,23 +181,26 @@ function getCounselorResponse(userQuery: string): string {
     q.includes('location') ||
     q.includes('address') ||
     q.includes('partner') ||
-    q.includes('price')
+    q.includes('price') ||
+    q.includes('quote')
   ) {
-    return 'We would love to collaborate with you! You can reach us directly at [mmrhridoy99@gmail.com](mailto:mmrhridoy99@gmail.com), call/WhatsApp [+8801827459921](tel:+8801827459921), or visit us in Dhaka, Bangladesh.';
+    return 'We would love to collaborate with you! You can reach us at [evarintelligenceltd@gmail.com](mailto:evarintelligenceltd@gmail.com), contact our Tech Business Lead Foysal Ahmed directly at [send.fahmed@gmail.com](mailto:send.fahmed@gmail.com), call/WhatsApp [+8801827459921](tel:+8801827459921), or explore [evarintelligenceltd.com](https://www.evarintelligenceltd.com/).';
   }
 
-  // 11. Specialties Overview
+  // 12. Specialties & Services Overview
   if (
     q.includes('specialt') ||
     q.includes('service') ||
     q.includes('offer') ||
     q.includes('what do you do') ||
-    q.includes('what is evar')
+    q.includes('what is evar') ||
+    q.includes('help me') ||
+    q.includes('capabilities')
   ) {
-    return 'EVAR Intelligence is an innovation hub focused on 5 specialties: AI Safety, AI Awareness, Intelligent Software, AI Product Development, and AI Automation. Which of these five would you like to explore deeper?';
+    return 'EVAR Intelligence is an innovation hub providing 5 core services: AI Safety & Governance, AI Awareness Programs, Custom Intelligent Software, Enterprise AI Product Development, and Autonomous Multi-Agent Automation. How can our team support your goals?';
   }
 
-  // 12. "How are you"
+  // 13. "How are you"
   if (
     q.includes('how are you') ||
     q.includes('how are yu') ||
@@ -186,10 +208,10 @@ function getCounselorResponse(userQuery: string): string {
     q.includes('how do you do') ||
     q.includes('how is it going')
   ) {
-    return "I'm doing wonderful, thank you for asking! I'm here to help you explore EVAR Intelligence and our 6 active product deployments across AI safety, intelligent software, and e-commerce. How can I assist you today?";
+    return "I'm doing wonderful, thank you for asking! I'm here to help you explore EVAR Intelligence, our 6 production deployments, and custom AI services. How can I assist you today?";
   }
 
-  // 13. Greetings
+  // 14. Greetings
   if (
     q.startsWith('hi') ||
     q.startsWith('hello') ||
@@ -197,10 +219,10 @@ function getCounselorResponse(userQuery: string): string {
     q === 'hi' ||
     q === 'hello'
   ) {
-    return "Hello! I'm Evar AI, your guide for EVAR Intelligence Ltd. How are you doing today, and which of our products or specialties would you like to explore?";
+    return "Hello! I'm Evar AI, your guide for EVAR Intelligence Ltd. How can I help you explore our services, products, or connect with our leadership today?";
   }
 
-  // 14. Identity
+  // 15. Identity
   if (
     q.includes('who are you') ||
     q.includes('what are you') ||

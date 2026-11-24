@@ -171,11 +171,11 @@ export const DEFAULT_PRODUCTS: ProductData[] = [
     gallery: [
       'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80',
     ],
-    demoUrl: 'https://evarintelligenceltd.vercel.app/',
+    demoUrl: 'https://www.evarintelligenceltd.com/',
     status: 'published',
     isFeatured: true,
     ctaText: 'Launch Hosted Website',
-    ctaLink: 'https://evarintelligenceltd.vercel.app/',
+    ctaLink: 'https://www.evarintelligenceltd.com/',
   },
   {
     id: 'prod-masruf-portfolio',

@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Facebook, Linkedin, Globe } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -27,23 +28,65 @@ export default function Footer() {
               for a safer tomorrow across AI Safety, AI Awareness, Intelligent Software, AI Product
               Development, and AI Automation.
             </p>
-            <div className="pt-2 space-y-1 text-xs text-[#94a3b8]">
+            <div className="pt-2 space-y-1.5 text-xs text-[#94a3b8]">
               <div>
                 <span className="text-[#64748b] font-mono text-[10px] uppercase">Location:</span>{' '}
                 <span className="text-white font-medium">Dhaka, Bangladesh</span>
               </div>
               <div>
                 <span className="text-[#64748b] font-mono text-[10px] uppercase">Email:</span>{' '}
-                <a href="mailto:mmrhridoy99@gmail.com" className="text-cyan-400 hover:underline">
-                  mmrhridoy99@gmail.com
+                <a href="mailto:evarintelligenceltd@gmail.com" className="text-cyan-400 hover:underline">
+                  evarintelligenceltd@gmail.com
                 </a>
               </div>
               <div>
-                <span className="text-[#64748b] font-mono text-[10px] uppercase">Phone:</span>{' '}
+                <span className="text-[#64748b] font-mono text-[10px] uppercase">Contact:</span>{' '}
                 <a href="tel:+8801827459921" className="text-cyan-400 hover:underline">
-                  +8801827459921
+                  01827459921 / +8801827459921
                 </a>
               </div>
+              <div>
+                <span className="text-[#64748b] font-mono text-[10px] uppercase">Website:</span>{' '}
+                <a
+                  href="https://www.evarintelligenceltd.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:underline"
+                >
+                  www.evarintelligenceltd.com
+                </a>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-2.5 pt-2">
+              <a
+                href="https://www.facebook.com/evarinlelligenceltd"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook"
+                className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
+              >
+                <Facebook className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/evar-intelligence-ltd"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
+              >
+                <Linkedin className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href="https://www.evarintelligenceltd.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Official Website"
+                className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
+              >
+                <Globe className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 

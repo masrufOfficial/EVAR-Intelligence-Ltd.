@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Shield, Send, CheckCircle, AlertCircle, MapPin, Lock } from 'lucide-react';
+import { Mail, Shield, Send, CheckCircle, AlertCircle, MapPin, Lock, Globe, Facebook, Linkedin } from 'lucide-react';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -88,13 +88,26 @@ export default function ContactSection() {
 
             <div className="space-y-4 pt-4 border-t border-[#00212b]/10 dark:border-white/[0.06]">
               <div className="text-xs text-[#475569] dark:text-[#a7a6a6]">
-                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Direct Inquiries &amp; Email</div>
+                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Corporate &amp; Direct Email</div>
                 <a
-                  href="mailto:mmrhridoy99@gmail.com"
+                  href="mailto:evarintelligenceltd@gmail.com"
                   className="text-[#00212b] dark:text-[#fafafa] font-medium hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
                 >
-                  mmrhridoy99@gmail.com
+                  evarintelligenceltd@gmail.com
                 </a>
+              </div>
+
+              <div className="text-xs text-[#475569] dark:text-[#a7a6a6]">
+                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Technology Business Development</div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-[#00212b] dark:text-[#fafafa] font-medium">Foysal Ahmed:</span>
+                  <a
+                    href="mailto:send.fahmed@gmail.com"
+                    className="text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+                  >
+                    send.fahmed@gmail.com
+                  </a>
+                </div>
               </div>
 
               <div className="text-xs text-[#475569] dark:text-[#a7a6a6]">
@@ -108,8 +121,40 @@ export default function ContactSection() {
               </div>
 
               <div className="text-xs text-[#475569] dark:text-[#a7a6a6]">
-                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Headquarters &amp; Location</div>
-                <div className="text-[#00212b] dark:text-[#fafafa] font-medium">EVAR Intelligence Ltd., Dhaka, Bangladesh</div>
+                <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Official Website &amp; Headquarters</div>
+                <div className="text-[#00212b] dark:text-[#fafafa] font-medium mb-1">
+                  EVAR Intelligence Ltd., Dhaka, Bangladesh
+                </div>
+                <a
+                  href="https://www.evarintelligenceltd.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-600 dark:text-cyan-400 font-medium hover:underline inline-flex items-center space-x-1"
+                >
+                  <span>www.evarintelligenceltd.com</span>
+                </a>
+              </div>
+
+              {/* Social Channels */}
+              <div className="pt-2 flex items-center space-x-3">
+                <a
+                  href="https://www.facebook.com/evarinlelligenceltd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-white/60 dark:bg-white/[0.04] border border-[#00212b]/10 dark:border-white/10 hover:border-cyan-500/40 text-xs text-[#475569] dark:text-[#cbd5e1] hover:text-cyan-400 transition-colors"
+                >
+                  <Facebook className="w-3.5 h-3.5 text-blue-500" />
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/evar-intelligence-ltd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-white/60 dark:bg-white/[0.04] border border-[#00212b]/10 dark:border-white/10 hover:border-cyan-500/40 text-xs text-[#475569] dark:text-[#cbd5e1] hover:text-cyan-400 transition-colors"
+                >
+                  <Linkedin className="w-3.5 h-3.5 text-sky-500" />
+                  <span>LinkedIn</span>
+                </a>
               </div>
             </div>
 
