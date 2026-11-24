@@ -3,14 +3,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Linkedin, Globe } from 'lucide-react';
+import { Facebook, Linkedin, Globe, MapPin, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="bg-transparent border-t border-white/[0.08] text-[#94a3b8] text-xs">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-12">
-          {/* Brand Info with Logo Artwork */}
+        {/* Main Grid: Brand & Navigation */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+          {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block relative">
               <div className="relative h-9 sm:h-10 w-36 flex items-center">
@@ -28,44 +29,15 @@ export default function Footer() {
               for a safer tomorrow across AI Safety, AI Awareness, Intelligent Software, AI Product
               Development, and AI Automation.
             </p>
-            <div className="pt-2 space-y-1.5 text-xs text-[#94a3b8]">
-              <div>
-                <span className="text-[#64748b] font-mono text-[10px] uppercase">Location:</span>{' '}
-                <span className="text-white font-medium">Dhaka, Bangladesh</span>
-              </div>
-              <div>
-                <span className="text-[#64748b] font-mono text-[10px] uppercase">Email:</span>{' '}
-                <a href="mailto:evarintelligenceltd@gmail.com" className="text-cyan-400 hover:underline">
-                  evarintelligenceltd@gmail.com
-                </a>
-              </div>
-              <div>
-                <span className="text-[#64748b] font-mono text-[10px] uppercase">Contact:</span>{' '}
-                <a href="tel:+8801827459921" className="text-cyan-400 hover:underline">
-                  01827459921 / +8801827459921
-                </a>
-              </div>
-              <div>
-                <span className="text-[#64748b] font-mono text-[10px] uppercase">Website:</span>{' '}
-                <a
-                  href="https://www.evarintelligenceltd.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:underline"
-                >
-                  www.evarintelligenceltd.com
-                </a>
-              </div>
-            </div>
 
-            {/* Social Links */}
-            <div className="flex items-center space-x-2.5 pt-2">
+            {/* Social Channels */}
+            <div className="flex items-center space-x-2 pt-1">
               <a
                 href="https://www.facebook.com/evarinlelligenceltd"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Facebook"
-                className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
+                className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
               >
                 <Facebook className="w-3.5 h-3.5" />
               </a>
@@ -74,7 +46,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="LinkedIn"
-                className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
+                className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
               >
                 <Linkedin className="w-3.5 h-3.5" />
               </a>
@@ -83,7 +55,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Official Website"
-                className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
+                className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 flex items-center justify-center text-[#94a3b8] hover:text-cyan-400 transition-colors"
               >
                 <Globe className="w-3.5 h-3.5" />
               </a>
@@ -133,8 +105,62 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Full-Length Enterprise Contact & Meta Strip */}
+        <div className="my-10 py-3.5 px-5 sm:px-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] backdrop-blur-md flex flex-wrap items-center justify-between gap-y-3 gap-x-6 text-xs text-[#94a3b8]">
+          {/* Location */}
+          <div className="flex items-center space-x-2">
+            <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span className="text-[#64748b] font-mono text-[10px] uppercase">Location:</span>
+            <span className="text-white font-medium">Dhaka, Bangladesh</span>
+          </div>
+
+          <div className="hidden lg:block w-px h-3.5 bg-white/10" />
+
+          {/* Email */}
+          <div className="flex items-center space-x-2">
+            <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span className="text-[#64748b] font-mono text-[10px] uppercase">Email:</span>
+            <a
+              href="mailto:evarintelligenceltd@gmail.com"
+              className="text-white hover:text-cyan-400 font-medium transition-colors"
+            >
+              evarintelligenceltd@gmail.com
+            </a>
+          </div>
+
+          <div className="hidden lg:block w-px h-3.5 bg-white/10" />
+
+          {/* Contact Number (single, clean international format) */}
+          <div className="flex items-center space-x-2">
+            <Phone className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span className="text-[#64748b] font-mono text-[10px] uppercase">Contact:</span>
+            <a
+              href="tel:+8801827459921"
+              className="text-white hover:text-cyan-400 font-medium font-mono transition-colors"
+            >
+              +880 1827-459921
+            </a>
+          </div>
+
+          <div className="hidden lg:block w-px h-3.5 bg-white/10" />
+
+          {/* Website */}
+          <div className="flex items-center space-x-2">
+            <Globe className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span className="text-[#64748b] font-mono text-[10px] uppercase">Website:</span>
+            <a
+              href="https://www.evarintelligenceltd.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-cyan-400 font-medium transition-colors"
+            >
+              www.evarintelligenceltd.com
+            </a>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-[#64748b]">
+        <div className="pt-2 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-[#64748b]">
           <div className="flex flex-wrap items-center gap-2 text-center md:text-left">
             <span>&copy; {new Date().getFullYear()} EVAR Intelligence Ltd. Human Protection in the Age of AI.</span>
             <span className="hidden sm:inline">&bull;</span>

@@ -114,9 +114,9 @@ export default function ContactSection() {
                 <div className="text-[10px] text-[#64748b] dark:text-[#8b8a8a] uppercase font-mono mb-0.5">Phone &amp; Direct Line</div>
                 <a
                   href="tel:+8801827459921"
-                  className="text-[#00212b] dark:text-[#fafafa] font-medium hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+                  className="text-[#00212b] dark:text-[#fafafa] font-medium font-mono hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
                 >
-                  01827459921 / +8801827459921
+                  +880 1827-459921
                 </a>
               </div>
 
