@@ -47,8 +47,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.evarintelligenceltd.com/',
   },
   icons: {
-    icon: '/images/evar-logo-dark.png',
-    apple: '/images/evar-logo-dark.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   openGraph: {
     title: 'EVAR Intelligence Ltd. | An Innovation Hub for Human Protection in the Age of AI',
@@ -108,8 +114,8 @@ export default function RootLayout({
           'EVAR',
         ],
         url: 'https://www.evarintelligenceltd.com/',
-        logo: 'https://www.evarintelligenceltd.com/images/evar-logo-dark.png',
-        image: 'https://www.evarintelligenceltd.com/images/evar-logo-dark.png',
+        logo: 'https://www.evarintelligenceltd.com/icon.png',
+        image: 'https://www.evarintelligenceltd.com/icon.png',
         description:
           'An innovation hub for human protection in the age of AI. Building intelligent solutions for a safer tomorrow across AI Safety, AI Awareness, Intelligent Software, AI Product Development, and AI Automation.',
         email: 'evarintelligenceltd@gmail.com',
