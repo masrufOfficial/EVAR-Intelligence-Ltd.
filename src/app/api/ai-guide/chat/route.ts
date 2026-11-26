@@ -19,7 +19,7 @@ STRICT CORE PRINCIPLES:
 5. FOUNDERS & EXECUTIVE LEADERSHIP:
    - Masruf Rahman: Founder, CEO & CTO (leads research, AI safety & architectures). Personal site: https://www.masrufrahman.info
    - Mahbuba Islam Mim: Founder, COO & HR (leads operations, organizational development & community).
-   - Emdadul Hasan Shishir: Lead Developer & R&D Engineer.
+   - Emdadul Hasan Shishir: Lead Engineer & R&D Head (directs core software architectures, AI infrastructure & runtime verification).
    - Foysal Ahmed: Technology Business Development Lead (leads tech commercialization, enterprise alliances & partnerships. Direct contact: send.fahmed@gmail.com).
    - Shamsuzzaman Sumon: Director of Product Operations.
 6. EVAR'S 6 FLAGSHIP PRODUCTS & DEPLOYMENTS (Never mention GitHub repo links):
@@ -101,16 +101,20 @@ function getCounselorResponse(userQuery: string): string {
     return 'Foysal Ahmed is our Technology Business Development Lead at EVAR Intelligence Ltd. He oversees strategic industry partnerships, enterprise alliances, and commercialization. You can reach him directly at [send.fahmed@gmail.com](mailto:send.fahmed@gmail.com).';
   }
 
-  // 5. Leadership / Team
+  // 5. Emdadul Hasan Shishir
+  if (q.includes('shishir') || q.includes('emdadul') || q.includes('r&d head') || q.includes('lead engineer')) {
+    return 'Emdadul Hasan Shishir is the Lead Engineer & R&D Head at EVAR Intelligence Ltd. He directs our core full-stack software architecture, scalable AI infrastructure, and deterministic runtime verification pipelines.';
+  }
+
+  // 6. Leadership / Team
   if (
     q.includes('founder') ||
     q.includes('leadership') ||
     q.includes('who runs') ||
     q.includes('team') ||
-    q.includes('shishir') ||
     q.includes('sumon')
   ) {
-    return 'EVAR Intelligence is led by Founders Masruf Rahman (CEO & CTO) and Mahbuba Islam Mim (COO & HR), alongside Emdadul Hasan Shishir (Lead Developer), Foysal Ahmed (Technology Business Development Lead), and Shamsuzzaman Sumon (Director of Product Operations). Learn more in our [Leadership section](/leadership).';
+    return 'EVAR Intelligence is led by Founders Masruf Rahman (CEO & CTO) and Mahbuba Islam Mim (COO & HR), alongside Emdadul Hasan Shishir (Lead Engineer & R&D Head), Foysal Ahmed (Technology Business Development Lead), and Shamsuzzaman Sumon (Director of Product Operations). Learn more in our [Leadership section](/leadership).';
   }
 
   // 6. AI Safety

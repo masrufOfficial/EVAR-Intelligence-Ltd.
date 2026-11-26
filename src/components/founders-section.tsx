@@ -114,8 +114,8 @@ export default function FoundersSection() {
     {
       id: 'shishir',
       name: 'Emdadul Hasan Shishir',
-      position: 'Lead Developer',
-      badge: 'Engineering',
+      position: 'Lead Engineer & R&D Head',
+      badge: 'Engineering & R&D',
       badgeIcon: Code2,
       badgeColor: 'text-cyan-300 border-cyan-500/30 bg-cyan-500/10',
       haloColor: 'bg-cyan-500/10',
